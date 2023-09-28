@@ -68,9 +68,14 @@ df = df[df['Vigtig'] != 0]
 min_date = df['Dato'].min()
 max_date = df['Dato'].max()
 
-df['størrelse'] = 20 / df['Vigtig']
+size_mapping = {
+    1: 20,
+    2: 16,
+    3: 14,
+    4: 12
+}
 
-df['størrelse'] = df['størrelse'].round().astype(int)
+df['størrelse'] = df['Vigtig'].map(size_mapping)
 
 color_mapping_df = {
     1: '#003F36',
