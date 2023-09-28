@@ -317,8 +317,8 @@ def combined_plot_with_layout(data, selected_date, selected_data):
     return fig_combined
 
 
-with st.spinner('Indlæser data - vent venligst!'):
-    time.sleep(20)
+with st.spinner('Indlæser data - vent venligst! Det kan tage op til 40 sekunder'):
+    time.sleep(40)
 
 #st.text_area("Sundhedsstyrelsens covid-19 tidslinje dækker perioden fra den 5. januar 2020 og frem til den 5. maj 2023. Det er muligt at zoome ind og ud på både et bestemt tidsrum og et specifikt emne, man ønsker at undersøge. Tidslinjen indeholder derfor både en filterfunktion på datoer og på temaer såsom restriktioner, vaccinationsindsats og mere. Det er også muligt at vælge, hvilket vigtighedsniveau tidslinjen skal vise. Alle begivenheder er opdelt på vigtighedsniveauer fra 1 (mest vigtige) til 4 (mindst vigtige). Hvis intet andet angives, viser tidslinjen udelukkende begivenheder med den højeste vigtighed (vigtighedskategori 1)")
 
