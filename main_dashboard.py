@@ -1,5 +1,4 @@
 import pandas as pd
-import plotly.io as pio
 import streamlit as st
 from plotly.subplots import make_subplots
 from PIL import Image
