@@ -13,7 +13,7 @@ import base64
 def load_excel(file_path):
     return pd.read_excel(file_path)
 
-
+st.set_page_config(layout="wide")
 
 
 image = Image.open(r"SSTLogo.png")
