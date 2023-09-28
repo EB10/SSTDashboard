@@ -37,23 +37,6 @@ st.markdown('<style>h1 {font-size: 50px;font-family: Arial, sans-serif;}</style>
 
 
 pio.renderers.default = "browser"
-st.sidebar.title("Vejledning til brug af tidslinjen")
-
-st.sidebar.markdown(
-    'Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data '
-    'over tid og efter begivenheder og data på udviklingen.\n\n Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.  \n\n'
-    '### Sådan bruger du appen:\n'
-    '- **Zoom på datoer:** Du kan zoome ind på specifikke datoer på to måder:  \n'
-    '  - **Ved hjælp af datofilteret:** Vælg den ønskede datointerval i datofilteret for at zoome ind på et bestemt tidsrum.  \n'
-    '  - **Ved at markere et område på grafen:** Træk for at markere det tidsrum, du ønsker at fokusere på, direkte på grafen.  \n'
-    '- **Nulstil visningen:** For at nulstille visningen og se alle data igen, kan du klikke på "Genstart visningen" herunder.  \n\n'
-    '### Filtrer efter emner:\n'
-    'Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. '
-    'Tidslinjen viser begivenheder sorteret efter vigtighed, fra kategori 1 (mest vigtige) til kategori 4 (mindst vigtige). '
-    'Som standard vises kun begivenheder i kategori 1.  \n\n'
-    'Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. '
-    'Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.', unsafe_allow_html=True)
-
 
 df = load_excel(r"Begivenheder_appdata.xlsx")
 df_HaendelsesData = load_excel(r"Samlet.xlsx")
@@ -166,7 +149,37 @@ color_mapping = {
     'Antal positive PCR-test': 'rgba(200, 0, 100, 0.6)'
 
 }
+st.sidebar.title("Vejledning til brug af tidslinjen")
 
+st.sidebar.markdown(
+    'Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data '
+    'over tid og efter begivenheder og data på udviklingen.\n\n Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.  \n\n'
+    '### Sådan bruger du appen:\n'
+    '- **Zoom på datoer:** Du kan zoome ind på specifikke datoer på to måder:  \n'
+    '  - **Ved hjælp af datofilteret:** Vælg den ønskede datointerval i datofilteret for at zoome ind på et bestemt tidsrum.  \n'
+    '  - **Ved at markere et område på grafen:** Træk for at markere det tidsrum, du ønsker at fokusere på, direkte på grafen.  \n'
+    '- **Nulstil visningen:** For at nulstille visningen og se alle data igen, kan du klikke på "Genstart visningen" herunder.  \n\n'
+    '### Filtrer efter emner:\n'
+    'Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. '
+    'Tidslinjen viser begivenheder sorteret efter vigtighed, fra kategori 1 (mest vigtige) til kategori 4 (mindst vigtige). '
+    'Som standard vises kun begivenheder i kategori 1.  \n\n'
+    'Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. '
+    'Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.', unsafe_allow_html=True)
+
+
+color_mapping_df = {
+    1: '#003F36',
+    2: '#FFDC3C',
+    3: '#00D79B',
+    4: '#FF7896'
+}
+
+
+df['color'] = df['Vigtig'].map(color_mapping_df)
+legend_text = '<div style="font-size:14px;">Vigtighedsniveauer:'
+for value, color in color_mapping_df.items():
+    legend_text += f"{value}: " + f'<span style="color:{color};">●</span>'
+st.sidebar.markdown(legend_text +'<br><br>' , unsafe_allow_html=True)
 def update_plot(selected_date):
 
 
