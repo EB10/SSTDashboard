@@ -1,5 +1,5 @@
 import pandas as pd
-import plotly.graph_objects as go
+#import plotly.graph_objects as go
 import plotly.io as pio
 import streamlit as st
 from plotly.subplots import make_subplots
@@ -18,13 +18,13 @@ locale.setlocale(locale.LC_TIME, 'da_DK.UTF-8')
 
 st.set_page_config(layout="wide")
 
-image = Image.open(r"C:\Users\emwi\PycharmProjects\SSTDashboard\SSTLogo.png")
+image = Image.open(r"SSTLogo.png")
 
 def get_image_base64(image):
     with open(image, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode('utf-8')
 
-image_base64 = get_image_base64(r"C:\Users\emwi\PycharmProjects\SSTDashboard\SSTLogo.png")
+image_base64 = get_image_base64(r"SSTLogo.png")
 
 st.markdown(
     f'<a href="https://sst.dk" target="_blank">\
@@ -57,8 +57,8 @@ st.sidebar.markdown(
     'Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.', unsafe_allow_html=True)
 
 
-df = load_excel(r"C:\Users\emwi\Implement\Covid-19 tidslinje (36395) - Documents\40 Working documents\Intern tidslinje\Begivenheder_appdata.xlsx")
-df_HaendelsesData = load_excel(r"C:\Users\emwi\Implement\Covid-19 tidslinje (36395) - Documents\40 Working documents\Kvantitativ data\Samlet\Samlet.xlsx")
+df = load_excel(r"Begivenheder_appdata.xlsx")
+df_HaendelsesData = load_excel(r"Samlet.xlsx")
 
 df.columns = df.columns.str.strip()
 df_HaendelsesData.coumns = df.columns.str.strip()
