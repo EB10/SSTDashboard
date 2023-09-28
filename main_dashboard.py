@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-from plotly.subplots import make_subplots
 from PIL import Image
 import time
 import locale
