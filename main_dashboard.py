@@ -60,19 +60,7 @@ size_mapping = {
 
 df['størrelse'] = df['Vigtig'].map(size_mapping)
 
-color_mapping_df = {
-    1: '#003F36',
-    2: '#FFDC3C',
-    3: '#00D79B',
-    4: '#FF7896'
-}
 
-
-df['color'] = df['Vigtig'].map(color_mapping_df)
-legend_text = '<div style="font-size:14px;">Vigtighedsniveauer:'
-for value, color in color_mapping_df.items():
-    legend_text += f"{value}: " + f'<span style="color:{color};">●</span>'
-st.sidebar.markdown(legend_text +'<br><br>' , unsafe_allow_html=True)
 
 if st.sidebar.button('Genstart visningen'):
     st.markdown('<meta http-equiv="refresh" content="0">', unsafe_allow_html=True)
