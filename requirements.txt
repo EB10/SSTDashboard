@@ -83,8 +83,8 @@ PySocks==1.7.1
 python-dateutil==2.8.2
 pytz==2023.3
 pytz-deprecation-shim==0.1.0.post0
-pypiwin32
-pywin32-ctypes==0.2.0
+pywin32
+pywin32-ctypes
 pyzmq==25.1.0
 reportlab==4.0.4
 requests==2.31.0
