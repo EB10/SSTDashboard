@@ -32,7 +32,7 @@ st.markdown(
 )
 
 
-st.title('Tidslinje over covid-19')
+st.title('Tidslinje over myndighedshåndteringen af covid-19')
 st.markdown('<style>h1 {font-size: 100px;font-family: Arial, sans-serif;}</style>', unsafe_allow_html=True)
 
 
