@@ -13,9 +13,7 @@ import base64
 def load_excel(file_path):
     return pd.read_excel(file_path)
 
-locale.getlocale()
 
-locale.setlocale(locale.LC_TIME, 'da_DK.UTF-8')
 
 st.set_page_config(layout="wide")
 
