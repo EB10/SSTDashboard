@@ -15,7 +15,6 @@ def load_excel(file_path):
 
 
 
-st.set_page_config(layout="wide")
 
 image = Image.open(r"SSTLogo.png")
 
