@@ -154,7 +154,7 @@ df['order'] = df['Kategori'].map(order_mapping)
 df = df.sort_values('order')
 color_mapping = {
     'Antal indlagte i alt': 'rgba(0, 100, 300, 0.6)',
-    'Antal indlagte på intensiv ': 'rgba(100, 0, 300, 0.6)',
+    'Antal indlagte på intensiv': 'rgba(100, 0, 300, 0.6)',
     'Antal indlagte i respirator': 'rgba(300, 100, 0, 0.6)',
     'Antal vaccinationsstik': 'rgba(0, 200, 100, 0.6)',
     'Antal PCR-test': 'rgba(100, 200, 0, 0.6)',
