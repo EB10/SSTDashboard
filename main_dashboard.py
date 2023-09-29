@@ -301,7 +301,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
            tickfont=dict(size=28, color="black")
         ),
         yaxis2=dict(tickformat = ".",
-            title=f"Antal indlagte",
+            title=f"Antal",
             gridcolor="black",
             titlefont=dict(size=28, color="black"), tickfont =dict(size=28, color="black")
         ),
