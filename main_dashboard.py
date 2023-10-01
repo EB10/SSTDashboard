@@ -60,8 +60,6 @@ size_mapping = {
 
 df['størrelse'] = df['Vigtig'].map(size_mapping)
 
-
-
 if st.sidebar.button('Genstart visningen'):
     st.markdown('<meta http-equiv="refresh" content="0">', unsafe_allow_html=True)
 
@@ -104,11 +102,10 @@ VigtighedLabels.append("Alle begivenheder")
 VigtighedLabels = list(df['Vigtig'].unique())
 
 valgte_vigtigheder = st.sidebar.multiselect("Vælg vigtighed", VigtighedLabels, default=[1])
+valgte_vigtigheder = set(valgte_vigtigheder)
 
-if valgte_vigtigheder:
-    df = df[df["Vigtig"].isin(valgte_vigtigheder)]
-else:
-    df = df.copy()
+# Filter df if valgte_vigtigheder is not empty, else use it as is
+df = df[df["Vigtig"].isin(valgte_vigtigheder)] if valgte_vigtigheder else df
 
 
 if "Alle begivenheder" not in selected_y_value:
@@ -122,6 +119,7 @@ selected_data = st.sidebar.multiselect(
     ['Antal indlagte i alt', 'Antal indlagte på intensiv', 'Antal indlagte i respirator', 'Antal vaccinationsstik', 'Antal PCR-test', 'Antal positive PCR-test'],
     default=['Antal indlagte i alt']
 )
+
 
 y_order = ["Udgivelser","Øvrige tiltag","Vaccinationsindsats","Test og smitteforebyggelse", "Sundhedsvæsen","Restriktioner", 'Epidemiologisk udvikling'  ]
 order_mapping = {category: i for i, category in enumerate(y_order)}
@@ -168,6 +166,7 @@ legend_text = '<div style="font-size:14px;">Vigtighedsniveauer:'
 for value, color in color_mapping_df.items():
     legend_text += f"{value}: " + f'<span style="color:{color};">●</span>'
 st.sidebar.markdown(legend_text +'<br><br>' , unsafe_allow_html=True)
+
 def update_plot(selected_date):
 
 
@@ -208,6 +207,7 @@ def update_plot(selected_date):
 def create_test_graph(data):
     fig2 = make_subplots(specs=[[{"secondary_y": True}]])
 
+
     for GrafiskDataPunkt in selected_data:
         fig2.add_trace(
             go.Scatter(
@@ -234,7 +234,7 @@ def create_test_graph(data):
         legend=dict(x=0.1, y=1.0),
         xaxis_tickfont = dict(size = 28, color = "black"),
         yaxis_tickfont = dict(size=28, color = "black"),
-        margin=dict(l=300, r=0),
+        margin=dict(l=300, r=0)
 
 
     )
@@ -296,12 +296,12 @@ def combined_plot_with_layout(data, selected_date, selected_data):
             title_font = dict(size=50),
             showgrid=True,
             gridcolor='Black',
-            tickfont=dict(size=28, color="black")),
+            tickfont=dict(size=28, color="black"), tickformat="%d-%m-%y"),
         yaxis=dict(
            tickfont=dict(size=28, color="black")
         ),
         yaxis2=dict(tickformat = ".",
-            title=f"Antal",
+            title=f"Antal indlagte",
             gridcolor="black",
             titlefont=dict(size=28, color="black"), tickfont =dict(size=28, color="black")
         ),
@@ -318,14 +318,15 @@ def combined_plot_with_layout(data, selected_date, selected_data):
         orientation='h',
             font = dict(size = 35)
     )
+
     )
+    # Update y-axis tick format and separators
+    fig_combined.update_yaxes(tickformat=" ,", row=1, col=1)  # Update tick format for primary y-axis of first subplot
+    fig_combined.update_yaxes(tickformat=" ,", row=2, col=1)  # Update tick format for primary y-axis of second subplot
+    fig_combined.update_layout(separators="*.,*")
+    fig_combined.update_xaxes(showticklabels=True, row=1, col=1)
 
     return fig_combined
-
-
-
-
-#st.text_area("Sundhedsstyrelsens covid-19 tidslinje dækker perioden fra den 5. januar 2020 og frem til den 5. maj 2023. Det er muligt at zoome ind og ud på både et bestemt tidsrum og et specifikt emne, man ønsker at undersøge. Tidslinjen indeholder derfor både en filterfunktion på datoer og på temaer såsom restriktioner, vaccinationsindsats og mere. Det er også muligt at vælge, hvilket vigtighedsniveau tidslinjen skal vise. Alle begivenheder er opdelt på vigtighedsniveauer fra 1 (mest vigtige) til 4 (mindst vigtige). Hvis intet andet angives, viser tidslinjen udelukkende begivenheder med den højeste vigtighed (vigtighedskategori 1)")
 
 
 
