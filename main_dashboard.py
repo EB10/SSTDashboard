@@ -334,10 +334,6 @@ for value, color in color_mapping_df.items():
 # Create columns
 col1, col2 = st.columns([2, 1])  # Adjust the ratio based on your needs
 
-# Place the Plotly chart in the first column
-with col1:
-    combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-    st.plotly_chart(combined_figure)
 
 # Place the legend in the second column
 with col2:
