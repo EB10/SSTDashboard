@@ -7,6 +7,7 @@ from PIL import Image
 import time
 import locale
 import base64
+from io import BytesIO
 
 
 @st.cache_data
@@ -61,7 +62,12 @@ df['størrelse'] = df['Vigtig'].map(size_mapping)
 if st.sidebar.button('Genstart visningen'):
     st.markdown('<meta http-equiv="refresh" content="0">', unsafe_allow_html=True)
 
-
+st.sidebar.download_button(
+    label="Download data om tests og indlagte som Excelfil",
+    data=Samlet.xlsx,
+    file_name="DataPåTestsOgIndlagtecovid19.csv",
+    mime="xlsx"
+)
 
 
 start_date = st.sidebar.date_input('Startdato', min_date)
