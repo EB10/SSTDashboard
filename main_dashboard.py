@@ -163,6 +163,8 @@ legend_text = '<div style="font-size:14px;">Vigtighedsniveauer:'
 for value, color in color_mapping_df.items():
     legend_text += f"{value}: " + f'<span style="color:{color};">●</span>'
 st.sidebar.markdown(legend_text +'<br><br>' , unsafe_allow_html=True)
+df['symbol'] = 'circle'
+df.loc[df['Stjerne'].str.contains('\*', na=False, regex=True), 'symbol'] = 'star'
 
 def update_plot(selected_date):
 
@@ -179,7 +181,7 @@ def update_plot(selected_date):
             text=f"{row['Dato'].date()}<br>{row['Beskrivelse']}",
             hoverinfo="text",
             line=dict(width=6),
-                marker=dict(size=row['størrelse'], color = row['color'], symbol = "circle", opacity = 0.7),
+                marker=dict(size=row['størrelse'], color = row['color'], symbol = row['symbol'], opacity = 0.7),
             hoverlabel=dict(font=dict(size=30), bgcolor = "white")
         ))
         fig.update_layout(
