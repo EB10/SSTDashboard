@@ -222,7 +222,7 @@ def create_test_graph(data):
             secondary_y=False
         )
     fig2.update_layout(
-        title="Antal indlagte", titlefont = dict(size =28),
+        title="Antal", titlefont = dict(size =28),
         xaxis=dict(title='Dato', titlefont = dict(size =28, color = "black"), showgrid = True, gridcolor = 'black'),
         yaxis=dict(title="Antal", gridcolor = "black", titlefont = dict(size =28, color = "black"), tickformat = "."),
         xaxis_tickangle=-45,
@@ -299,7 +299,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
            tickfont=dict(size=28, color="black")
         ),
         yaxis2=dict(tickformat = ".",
-            title=f"Antal indlagte",
+            title=f"Antal",
             gridcolor="black",
             titlefont=dict(size=28, color="black"), tickfont =dict(size=28, color="black")
         ),
