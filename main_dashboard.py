@@ -32,7 +32,7 @@ st.markdown(
 
 
 st.title('Tidslinje Sundhedsstyrelsens håndtering af covid-19')
-st.markdown('<style>h1 {font-size: 100px;font-family: Raleway, sans-serif;}</style>', unsafe_allow_html=True)
+st.markdown('<style>h1 {font-size: 50px;font-family: Raleway, sans-serif;}</style>', unsafe_allow_html=True)
 
 pio.renderers.default = "browser"
 
