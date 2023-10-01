@@ -31,10 +31,9 @@ st.markdown(
 )
 
 
-
-with open( "style.css" ) as css:
-    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+st.title('Tidslinje Sundhedsstyrelsens håndtering af covid-19')
 st.markdown('<style>h1 {font-size: 100px;font-family: Raleway, sans-serif;}</style>', unsafe_allow_html=True)
+
 pio.renderers.default = "browser"
 
 df = load_excel(r"Begivenheder_appdata.xlsx")
