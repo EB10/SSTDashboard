@@ -25,7 +25,7 @@ image_base64 = get_image_base64(r"SSTLogo.png")
 
 st.markdown(
     f'<a href="https://sst.dk" target="_blank">\
-        <img src="data:image/png;base64,{image_base64}" width="200">\
+        <img src="data:image/png;base64,{image_base64}" width="300">\
     </a>',
     unsafe_allow_html=True
 )
