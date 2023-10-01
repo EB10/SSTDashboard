@@ -327,7 +327,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
     return fig_combined
 
 
-legend_text = '<div style="font-size:22px;line-height:3;">Vigtighedsniveauer:'
+legend_text = '<div style="font-size:22px;line-height:1;">Vigtighedsniveauer:'
 for value, color in color_mapping_df.items():
     legend_text += f"{value} = " + f'<span style="color:{color};font-size:50px;">●</span>'
 
