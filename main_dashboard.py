@@ -14,8 +14,6 @@ def load_excel(file_path):
     return pd.read_excel(file_path)
 
 st.set_page_config(layout="wide")
-with open( "style.css" ) as css:
-    st.markdown('<div class="title-style">Tidslinje over Sundhedsstyrelsens håndtering af covid-19</div>', unsafe_allow_html=True)
 
 image = Image.open(r"SSTLogo.png")
 
@@ -33,9 +31,10 @@ st.markdown(
 )
 
 
-st.title('Tidslinje over myndighedshåndteringen af covid-19')
-st.markdown('<style>h1 {font-size: 50px;font-family: Arial, sans-serif;}</style>', unsafe_allow_html=True)
 
+
+with open( "style.css" ) as css:
+    st.markdown('<div class="title-style">Tidslinje over Sundhedsstyrelsens håndtering af covid-19</div>', unsafe_allow_html=True)
 
 pio.renderers.default = "browser"
 
