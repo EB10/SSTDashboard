@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap'); 
 
-html, body, [class*="css"] {
+.title-style  {
     font-family: 'Raleway', sans-serif; 
     font-size: 50px;
     font-weight: 500;
