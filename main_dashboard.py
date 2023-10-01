@@ -327,6 +327,22 @@ def combined_plot_with_layout(data, selected_date, selected_data):
     return fig_combined
 
 
+legend_text = '<div style="font-size:22px;line-height:0;">Vigtighedsniveauer:'
+for value, color in color_mapping_df.items():
+    legend_text += f"{value} = " + f'<span style="color:{color};font-size:50px;">●</span>'
+
+# Create columns
+col1, col2 = st.columns([3, 1])  # Adjust the ratio based on your needs
+
+# Place the Plotly chart in the first column
+with col1:
+    combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
+    st.plotly_chart(combined_figure)
+
+# Place the legend in the second column
+with col2:
+    st.markdown(legend_text, unsafe_allow_html=True)
+
 
 
 combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
