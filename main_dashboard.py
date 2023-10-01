@@ -159,10 +159,7 @@ color_mapping_df = {
 
 
 df['color'] = df['Vigtig'].map(color_mapping_df)
-legend_text = '<div style="font-size:14px;">Vigtighedsniveauer:'
-for value, color in color_mapping_df.items():
-    legend_text += f"{value}: " + f'<span style="color:{color};">●</span>'
-st.sidebar.markdown(legend_text +'<br><br>' , unsafe_allow_html=True)
+
 df['symbol'] = 'circle'
 df.loc[df['Stjerne'].str.contains('\*', na=False, regex=True), 'symbol'] = 'star'
 
