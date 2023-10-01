@@ -15,7 +15,7 @@ def load_excel(file_path):
 
 st.set_page_config(layout="wide")
 with open( "style.css" ) as css:
-    st.markdown('<div class="title-style">My App Title</div>', unsafe_allow_html=True)
+    st.markdown('<div class="title-style">Tidslinje over Sundhedsstyrelsens håndtering af covid-19</div>', unsafe_allow_html=True)
 
 image = Image.open(r"SSTLogo.png")
 
