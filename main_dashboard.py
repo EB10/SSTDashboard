@@ -283,7 +283,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
     # Update the layout based on the layouts of fig and fig2
     fig_combined.update_layout(
         title = f"Begivenhedsoverblik og udvikling i daglig statistik",
-        title_font = dict(size = 25, family="Arial, sans-serif"),
+        title_font = dict(size = 35, family="Arial, sans-serif"),
         xaxis2=dict(
             showgrid=True,
             gridcolor='Black',
