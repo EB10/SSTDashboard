@@ -332,7 +332,7 @@ for value, color in color_mapping_df.items():
     legend_text += f"{value} = " + f'<span style="color:{color};font-size:50px;">●</span>'
 
 # Create columns
-col1, col2 = st.columns([3, 1])  # Adjust the ratio based on your needs
+col1, col2 = st.columns([2, 1])  # Adjust the ratio based on your needs
 
 # Place the Plotly chart in the first column
 with col1:
