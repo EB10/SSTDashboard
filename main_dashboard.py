@@ -32,9 +32,8 @@ st.markdown(
 
 
 
-
-with open( "style.css" ) as css:
-    st.markdown('<div class="title-style">Tidslinje over Sundhedsstyrelsens håndtering af covid-19</div>', unsafe_allow_html=True)
+with open( "app\style.css" ) as css:
+    st.markdown( f'<style>h1{css.read()}</style>' , unsafe_allow_html= True)
 
 pio.renderers.default = "browser"
 
