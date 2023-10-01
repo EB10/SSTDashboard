@@ -32,7 +32,7 @@ st.markdown(
 
 
 
-with open( "app\style.css" ) as css:
+with open( "style.css" ) as css:
     st.markdown( f'<style>h1{css.read()}</style>' , unsafe_allow_html= True)
 
 pio.renderers.default = "browser"
