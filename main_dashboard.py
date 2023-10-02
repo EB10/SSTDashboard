@@ -45,7 +45,6 @@ df_HaendelsesData.coumns = df.columns.str.strip()
 samlet_data = df
 df_HaendelsesData['Dato'] = pd.to_datetime(df_HaendelsesData['Dato'])
 
-df = df[df["Dobbelt"] != 1]
 df = df[df['Vigtig'] != 0]
 min_date = df['Dato'].min()
 max_date = df['Dato'].max()
