@@ -37,7 +37,7 @@ st.markdown('<style>h1 {font-size: 50px;font-family: Raleway, sans-serif;}</styl
 
 pio.renderers.default = "browser"
 
-df = load_excel(r"Begivenheder_appdata.xlsx")
+df = load_excel(r"Begivenheder_appdata1.xlsx")
 df_HaendelsesData = load_excel(r"Samlet.xlsx")
 
 df.columns = df.columns.str.strip()
