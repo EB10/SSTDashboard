@@ -176,7 +176,7 @@ def update_plot(selected_date):
             text=f"{row['Dato'].date()}<br>{row['Beskrivelse']}",
             hoverinfo="text",
             line=dict(width=6),
-                marker=dict(size=row['størrelse'], color = row['color'], symbol = f{"'row['Stjerne']'"}, opacity = 0.7),
+                marker=dict(size=row['størrelse'], color = row['color'], symbol = f{"row['Stjerne']"}, opacity = 0.7),
             hoverlabel=dict(font=dict(size=30), bgcolor = "white")
         ))
         fig.update_layout(
