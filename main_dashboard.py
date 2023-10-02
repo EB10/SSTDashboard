@@ -158,6 +158,7 @@ color_mapping_df = {
 
 
 df['color'] = df['Vigtig'].map(color_mapping_df)
+df['Stjerne'] = df['Stjerne'].fillna('circle')
 
 
 def update_plot(selected_date):
