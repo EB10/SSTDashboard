@@ -31,6 +31,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+with st.spinner('Wait for it...'):
+    time.sleep(0)
+
 
 st.title('Tidslinje over Sundhedsstyrelsens håndtering af covid-19')
 st.markdown('<style>h1 {font-size: 50px;font-family: Raleway, sans-serif;}</style>', unsafe_allow_html=True)
