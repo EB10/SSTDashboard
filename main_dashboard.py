@@ -31,8 +31,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-with st.spinner('Wait for it...'):
-    time.sleep(0)
 
 
 st.title('Tidslinje over Sundhedsstyrelsens håndtering af covid-19')
@@ -340,6 +338,8 @@ with col2:
     st.markdown(legend_text, unsafe_allow_html=True)
 
 
+with st.spinner('Wait for it...'):
+    time.sleep(0)
 
 combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
 st.plotly_chart(combined_figure)
