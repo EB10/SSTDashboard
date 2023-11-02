@@ -102,13 +102,14 @@ valgte_vigtigheder = set(valgte_vigtigheder)
 df = df[df["Vigtig"].isin(valgte_vigtigheder)] if valgte_vigtigheder else df
 
 
-if "Alle begivenheder" not in selected_y_value and selected_y_value:
-    # Remove duplicates and filter the dataframe
-    selected_y_value = list(set(selected_y_value))
-    df_filtered = df[df["Kategori_filter"].isin(selected_y_value)]
+if "Alle begivenheder" not in selected_y_value:
+    if selected_y_value:  
+        selected_y_value = list(set(selected_y_value))
+        df = df[df["Kategori_filter"].isin(selected_y_value)]
+    else:
+        df = df.copy()
 else:
-    # If "Alle begivenheder" is selected or no categories are selected, use the original dataframe
-    df_filtered = df
+    df = df.copy()
 
 selected_data = st.sidebar.multiselect(
     "Vælg statistik på dagsniveau",
