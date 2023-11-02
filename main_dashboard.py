@@ -287,7 +287,23 @@ def combined_plot_with_layout(data, selected_date, selected_data):
 
 
 legend_text = (
-    '<div style="position: fixed; top: 290px; right: 500px; width: 600px; font-size:22px; line-height:1;">'
+    '<style>'
+    '@media (min-width: 1200px) {'
+    '    .legend {'
+    '        position: fixed;'
+    '        top: 290px;'
+    '        right: 500px;'
+    '    }'
+    '}'
+    '@media (max-width: 1199px) {'
+    '    .legend {'
+    '        position: fixed;'
+    '        top: 290px;'
+    '        right: 10px;'
+    '    }'
+    '}'
+    '</style>'
+    '<div class="legend" style="width: 600px; font-size:22px; line-height:1;">'
     'Vigtighedsniveauer:'
 )
 
@@ -296,7 +312,6 @@ for value, color in color_mapping_df.items():
 
 legend_text += 'Milepæl = <span style="font-size:40px;">★</span></div>'
 
-# Place the legend in the layout
 st.markdown(legend_text, unsafe_allow_html=True)
 
 
