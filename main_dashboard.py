@@ -284,7 +284,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
 
 
 legend_text = (
-    '<div style="position: fixed; top: 240px; right: 500px; width: 600px; font-size:22px; line-height:1;">'
+    '<div style="position: fixed; top: 280px; right: 500px; width: 600px; font-size:22px; line-height:1;">'
     'Vigtighedsniveauer:'
 )
 
