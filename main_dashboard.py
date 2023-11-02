@@ -292,7 +292,7 @@ legend_text = (
     '    .legend {'
     '        position: fixed;'
     '        top: 290px;'
-    '        right: 1500px;'
+    '        right: 2000px;'
     '    }'
     '}'
     '@media (max-width: 1199px) {'
