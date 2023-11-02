@@ -103,9 +103,15 @@ df = df[df["Vigtig"].isin(valgte_vigtigheder)] if valgte_vigtigheder else df
 
 
 if "Alle begivenheder" not in selected_y_value:
-    selected_y_value = list(set(selected_y_value))
-    df = df[df["Kategori_filter"].isin(selected_y_value)]
+    
+    if selected_y_value:  
+        selected_y_value = list(set(selected_y_value))
+        df = df[df["Kategori_filter"].isin(selected_y_value)]
+    
+    else:
+        df = df.copy()
 else:
+    # If 'Alle begivenheder' is in the selection, copy the dataframe without filtering
     df = df.copy()
 
 selected_data = st.sidebar.multiselect(
