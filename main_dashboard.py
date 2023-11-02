@@ -276,7 +276,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
         success_message_placeholder.success('Data blev opdateret og vises om 5-10 sekunder')
 
         # Sleep for a few seconds to display the message
-        time.sleep(3)  # Adjust the number of seconds as needed
+        time.sleep(2)  # Adjust the number of seconds as needed
 
         # Clear the success message
         success_message_placeholder.empty()
@@ -316,4 +316,4 @@ st.markdown(legend_text, unsafe_allow_html=True)
 
 
 combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-st.plotly_chart(combined_figure)
+st.plotly_chart(combined_figure, use_container_width=True)
