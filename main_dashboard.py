@@ -288,14 +288,14 @@ def combined_plot_with_layout(data, selected_date, selected_data):
 
 legend_text = (
     '<style>'
-    '@media (min-width: 1200px) {'
+    '@media (min-width: 500px) {'
     '    .legend {'
     '        position: fixed;'
     '        top: 290px;'
     '        right: 500px;'
     '    }'
     '}'
-    '@media (max-width: 1199px) {'
+    '@media (max-width: 600px) {'
     '    .legend {'
     '        position: fixed;'
     '        top: 290px;'
