@@ -287,22 +287,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
 
 
 legend_text = (
-    '<style>'
-    '@media (min-width: 1200px) {'
-    '    .legend {'
-    '        position: fixed;'
-    '        top: 290px;'
-    '        right: 2000px;'
-    '    }'
-    '}'
-    '@media (max-width: 1199px) {'
-    '    .legend {'
-    '        position: fixed;'
-    '    }'
-    '}'
-    '</style>'
-    '<div class="legend" style="width: 600px; font-size:22px; line-height:1;">'
-    'Vigtighedsniveauer:'
+      'Vigtighedsniveauer:'
 )
 
 for value, color in color_mapping_df.items():
