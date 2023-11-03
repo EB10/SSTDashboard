@@ -298,8 +298,6 @@ legend_text = (
     '@media (max-width: 1199px) {'
     '    .legend {'
     '        position: fixed;'
-    '        top: 290px;'
-    '        left: 0px;'
     '    }'
     '}'
     '</style>'
