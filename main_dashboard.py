@@ -299,7 +299,7 @@ legend_text = (
     '    .legend {'
     '        position: fixed;'
     '        top: 290px;'
-    '        left: 150px;'
+    '        left: 250px;'
     '    }'
     '}'
     '</style>'
