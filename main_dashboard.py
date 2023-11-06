@@ -41,6 +41,7 @@ pio.renderers.default = "browser"
 df = load_excel(r"Begivenheder_appdata1.xlsx")
 df_HaendelsesData = load_excel(r"Samlet.xlsx")
 
+
 df.columns = df.columns.str.strip()
 df_HaendelsesData.coumns = df.columns.str.strip()
 samlet_data = df
@@ -103,11 +104,8 @@ df = df[df["Vigtig"].isin(valgte_vigtigheder)] if valgte_vigtigheder else df
 
 
 if "Alle begivenheder" not in selected_y_value:
-    if selected_y_value:  
-        selected_y_value = list(set(selected_y_value))
-        df = df[df["Kategori_filter"].isin(selected_y_value)]
-    else:
-        df = df.copy()
+    selected_y_value = list(set(selected_y_value))
+    df = df[df["Kategori_filter"].isin(selected_y_value)]
 else:
     df = df.copy()
 
@@ -159,6 +157,46 @@ color_mapping_df = {
 
 
 df['color'] = df['Vigtig'].map(color_mapping_df)
+# Add a title and some text explaining what the app does
+
+search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
+
+search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
+    'Vigtig': 'Vigtighedsniveau',
+    'Kategori': 'Overordnet kategori',
+    'Kategori_filter': 'Underordnet kategori'
+}).reset_index(drop=True)
+
+search_df['Dato'] = search_df['Dato'].dt.date
+
+# # Step 3: Reset the index
+# search_df.reset_index(drop=True, inplace=True)
+
+# Convert the DataFrame to HTML, hide the index and border
+
+
+# Filter the DataFrame based on the search term
+if search_term:
+    search_term_df = search_df[search_df['Beskrivelse'].str.contains(search_term, na=False, case=False)]
+    if not search_term_df.empty:
+        st.write("Søgeresultater:")
+        st.dataframe(search_term_df)
+    else:
+        st.info("Ingen resultater fundet for din søgning.")
+else:
+    st.info("Indtast venligst et søgeord i menuen til venstre for at se resultater.")
+
+# Optional: Add some styling to the DataFrame display
+st.markdown("""
+<style>
+.dataframe {
+    border: 1px solid #1e1e1e;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 0.85em;
+}
+</style>
+""", unsafe_allow_html=True)
 
 
 def update_plot(selected_date):
@@ -254,7 +292,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
         common_layout = dict(
             height=1260,
             width=1800,
-            margin=dict(l=300, r=0),
+            margin=dict(l=0, r=0),
             font=dict(family="Arial, sans-serif", size=28, color="black"),
             legend=dict(x=0.5, y=-0.1, xanchor='center', yanchor='top', orientation='h', font=dict(size=35))
         )
@@ -276,7 +314,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
         success_message_placeholder.success('Data blev opdateret og vises om 5-10 sekunder')
 
         # Sleep for a few seconds to display the message
-        time.sleep(2)  # Adjust the number of seconds as needed
+        time.sleep(3)  # Adjust the number of seconds as needed
 
         # Clear the success message
         success_message_placeholder.empty()
@@ -285,18 +323,34 @@ def combined_plot_with_layout(data, selected_date, selected_data):
     return fig_combined
 
 
-
 legend_text = (
-      'Vigtighedsniveauer:'
+    '<div style="position: absolute; top: 35%; left: 0; transform: translateY(-50%); z-index: 9; '
+    'width: 200px; font-size: 22px; line-height: 1.5; background: white; padding: 10px; '
+    'border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">'
+    '<strong>Vigtighedsniveauer:</strong><br>'
 )
 
+# for value, color in color_mapping_df.items():
+#     legend_text += f"{value} = " + f'<span style="color:{color};font-size: 30px; margin-right: 5px;">●</span><br>'
+#
+# legend_text += 'Milepæl = <span style="font-size: 24px;">★</span></div>'
+# #
+# combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
+# st.plotly_chart(combined_figure)
+col1, col2 = st.columns([1, 17])  # Adjust the ratio as needed
+
+legend_html = "<div style='margin-bottom: 2rem;'><h4>Vigtighedsniveauer</h4>"
 for value, color in color_mapping_df.items():
-    legend_text += f"{value} = " + f'<span style="color:{color};font-size:50px;">●</span>'
-
-legend_text += 'Milepæl = <span style="font-size:40px;">★</span></div>'
-
-st.markdown(legend_text, unsafe_allow_html=True)
+    legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
+legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
 
 
-combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-st.plotly_chart(combined_figure, use_container_width=True)
+with col1:
+    # Use the HTML block for the legend
+    st.markdown(legend_html, unsafe_allow_html=True)
+
+with col2:
+    # Plot code here
+    combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
+    st.plotly_chart(combined_figure, use_container_width=True)
+
