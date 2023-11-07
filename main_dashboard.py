@@ -342,7 +342,7 @@ legend_text = (
 # st.plotly_chart(combined_figure)
 col1, col2 = st.columns([1, 17])  # Adjust the ratio as needed
 
-legend_html = "<div style='margin-bottom: 2rem;'><h4>Vigtighedsniveauer</h4>"
+legend_html = "<div style='margin-bottom: 2rem;'><Vigtighedsniveauer>"
 for value, color in color_mapping_df.items():
     legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
 legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
