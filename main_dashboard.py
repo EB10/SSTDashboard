@@ -328,14 +328,13 @@ def combined_plot_with_layout(data, selected_date, selected_data):
 
 
 
-# for value, color in color_mapping_df.items():
-#     legend_text += f"{value} = " + f'<span style="color:{color};font-size: 30px; margin-right: 5px;">●</span><br>'
-#
-# legend_text += 'Milepæl = <span style="font-size: 24px;">★</span></div>'
-# #
-# combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-# st.plotly_chart(combined_figure)
-col1, col2 = st.columns([1, 17])  # Adjust the ratio as needed
+for value, color in color_mapping_df.items():
+    legend_text += f"{value} = " + f'<span style="color:{color};font-size: 30px; margin-right: 5px;">●</span><br>'
+    
+    legend_text += 'Milepæl = <span style="font-size: 24px;">★</span></div>'
+    combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
+    st.plotly_chart(combined_figure)
+    col1, col2 = st.columns([1, 17])  # Adjust the ratio as needed
 
 legend_html = "<div style='margin-bottom: 2rem;'Vigtighedsniveauer"
 for value, color in color_mapping_df.items():
