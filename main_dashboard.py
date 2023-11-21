@@ -99,7 +99,7 @@ VigtighedLabels.append("Alle begivenheder")
 
 VigtighedLabels = list(df['Vigtig'].unique())
 
-valgte_vigtigheder = st.sidebar.multiselect("Vælg vigtighed", VigtighedLabels, default=[1])
+valgte_vigtigheder = st.sidebar.multiselect("Vælg betydningsniveau", VigtighedLabels, default=[1])
 valgte_vigtigheder = set(valgte_vigtigheder)
 
 # Filter df if valgte_vigtigheder is not empty, else use it as is
@@ -145,7 +145,7 @@ st.sidebar.markdown(
     '- **Nulstil visningen:** For at nulstille visningen og se alle data igen, kan du klikke på "Genstart visningen" herunder.  \n\n'
     '### Filtrer efter emner:\n'
     'Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. '
-    'Tidslinjen viser begivenheder sorteret efter vigtighed, fra kategori 1 (mest vigtige) til kategori 4 (mindst vigtige). '
+    'Tidslinjen viser begivenheder sorteret efter betydningsgrad, fra kategori 1 (mest betydningsfuld) til kategori 4 (mindst betydningsfuld). '
     'Som standard vises kun begivenheder i kategori 1.  \n\n'
     'Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. '
     'Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.', unsafe_allow_html=True)
@@ -165,7 +165,7 @@ df['color'] = df['Vigtig'].map(color_mapping_df)
 search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
 
 search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
-    'Vigtig': 'Vigtighedsniveau',
+    'Vigtig': 'Betydningsniveau',
     'Kategori': 'Overordnet kategori',
     'Kategori_filter': 'Underordnet kategori'
 }).reset_index(drop=True)
@@ -326,7 +326,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
     return fig_combined
 col1, col2 = st.columns([1, 17])  # Adjust the ratio as needed
 
-legend_html = "<div style='margin-bottom: 2rem;'><h4>Vigtighedsniveauer</h4>"
+legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
 for value, color in color_mapping_df.items():
     legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
 legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
