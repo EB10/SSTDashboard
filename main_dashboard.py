@@ -325,27 +325,17 @@ def combined_plot_with_layout(data, selected_date, selected_data):
 
     return fig_combined
 
-legend_text = (
-    '<div style="position: absolute; top: 35%; left: 0; transform: translateY(-50%); z-index: 9; '
-    'width: 200px; font-size: 22px; line-height: 1.5; background: white; padding: 10px; '
-    'border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">'
-    '<strong>Vigtighedsniveauer:</strong><br>'
-)
 
 
 
-for value, color in color_mapping_df.items():
-    legend_text += f"{value} = " + f'<span style="color:{color};font-size: 30px; margin-right: 5px;">●</span><br>'
     
-    legend_text += 'Milepæl = <span style="font-size: 24px;">★</span></div>'
-    combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-    st.plotly_chart(combined_figure)
-    col1, col2 = st.columns([1, 17])  # Adjust the ratio as needed
+col1, col2 = st.columns([1, 17])  # Adjust the ratio as needed
 
-#legend_html = "<div style='margin-bottom: 2rem;'Vigtighedsniveauer"
-#for value, color in color_mapping_df.items():
- #   legend_html += f"<span style='color:{color}; font-size: 26px; margin-right: 5px;'>●</span> {value}<br>"
-#legend_html += "<span style='font-size: 26px;'>★</span> Milepæl</div>"
+legend_html = "<div style='margin-bottom: 2rem;'><h4>Vigtighedsniveauer</h4>"
+for value, color in color_mapping_df.items():
+    legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
+legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
+
 
 
 with col1:
