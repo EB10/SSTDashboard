@@ -324,7 +324,7 @@ def combined_plot_with_layout(data, selected_date, selected_data):
 
 
     return fig_combined
-col1, col2 = st.columns([1, 17])  # Adjust the ratio as needed
+col1, col2 = st.columns([1, 10])  # Adjust the ratio as needed
 
 legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
 for value, color in color_mapping_df.items():
