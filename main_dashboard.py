@@ -325,6 +325,12 @@ def combined_plot_with_layout(data, selected_date, selected_data):
 
     return fig_combined
 
+legend_text = (
+    '<div style="position: absolute; top: 35%; left: 0; transform: translateY(-50%); z-index: 9; '
+    'width: 200px; font-size: 22px; line-height: 1.5; background: white; padding: 10px; '
+    'border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">'
+    '<strong>Vigtighedsniveauer:</strong><br>'
+)
 
 
 
