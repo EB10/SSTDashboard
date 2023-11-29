@@ -71,7 +71,7 @@ def main():
     'Tidslinjen viser begivenheder sorteret efter betydningsgrad, fra kategori 1 (mest betydningsfuld) til kategori 4 (mindst betydningsfuld). '
     'Som standard vises kun begivenheder i kategori 1.  \n\n'
     'Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. '
-    'Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.', unsafe_allow_html=True)")
+    'Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.'")
 
     with st.expander("Data Side"):
         st.write("Her kan du se og analysere data.")
