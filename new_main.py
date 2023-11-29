@@ -321,7 +321,7 @@ def main():
         st.plotly_chart(combined_figure)
         
     with st.expander("Søg efter begivenheder"):
-        search_term = st.text_input("Angiv et søgeord for en begivenhed")
+        search_term = st.text_input("Angiv et søgeord her")
 
        
         if search_term:
@@ -332,7 +332,7 @@ def main():
             else:
                 st.info("Ingen resultater fundet for din søgning.")
             else:
-                st.info("Indtast et søgeord i menuen til venstre for at se resultater.")
+                st.info("Indtast et søgeord for begivenheder for at se resultater.")
         
         # Optional: Add some styling to the DataFrame display
         st.markdown("""
