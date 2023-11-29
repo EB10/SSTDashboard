@@ -58,21 +58,22 @@ max_date = df['Dato'].max()
 def main():
     
     with st.expander("Introduktion til brug af tidslinjen", expanded = True):
-        st.write("
-            Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data 
-            over tid og efter begivenheder og data på udviklingen.\n\n Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.  \n\n
-            **Sådan bruger du appen:**\n
-            - **Zoom på datoer:** Du kan zoome ind på specifikke datoer på to måder:  
-              - **Ved hjælp af datofilteret:** Vælg den ønskede datointerval i datofilteret for at zoome ind på et bestemt tidsrum.  
-              - **Ved at markere et område på grafen:** Træk for at markere det tidsrum, du ønsker at fokusere på, direkte på grafen.  \n
-            **Nulstil visningen:** For at nulstille visningen og se alle data igen, kan du klikke på "Genstart visningen" herunder.  \n\n
-            **Filtrer efter emner:**
-            Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. 
-            Tidslinjen viser begivenheder sorteret efter betydningsgrad, fra kategori 1 (mest betydningsfuld) til kategori 4 (mindst betydningsfuld). 
-            Som standard vises kun begivenheder i kategori 1.  \n\n
-            Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. 
-            Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.
-            ")
+      st.write(
+            "Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data "\
+            "over tid og efter begivenheder og data på udviklingen.\n\n Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.  \n\n"\
+            "**Sådan bruger du appen:**\n"\
+            "- **Zoom på datoer:** Du kan zoome ind på specifikke datoer på to måder:\n"\
+            "  - **Ved hjælp af datofilteret:** Vælg den ønskede datointerval i datofilteret for at zoome ind på et bestemt tidsrum.\n"\
+            "  - **Ved at markere et område på grafen:** Træk for at markere det tidsrum, du ønsker at fokusere på, direkte på grafen.\n"\
+            "**Nulstil visningen:** For at nulstille visningen og se alle data igen, kan du klikke på 'Genstart visningen' herunder.\n\n"\
+            "**Filtrer efter emner:**\n"\
+            "Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. "\
+            "Tidslinjen viser begivenheder sorteret efter betydningsgrad, fra kategori 1 (mest betydningsfuld) til kategori 4 (mindst betydningsfuld). "\
+            "Som standard vises kun begivenheder i kategori 1.\n\n"\
+            "Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. "\
+            "Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode."
+        )
+
 
     with st.expander("Data Side"):
         st.write("Her kan du se og analysere data.")
