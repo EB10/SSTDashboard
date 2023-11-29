@@ -209,7 +209,7 @@ def main():
                 name=f"Event {row.name+1}",
                 text=f"{row['Dato'].date()}<br>{row['Beskrivelse']}",
                 hoverinfo="text",
-                line=dict(width=20),
+                line=dict(width=10, height=3),
                 marker=dict(size=row['størrelse'], color=row['color'], symbol=row['Stjerne'], opacity=0.7),
                 hoverlabel=dict(font=dict(size=10), bgcolor="white")
             ), axis=1).tolist()
