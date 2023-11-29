@@ -211,7 +211,7 @@ def main():
                 hoverinfo="text",
                 line=dict(width=6),
                 marker=dict(size=row['størrelse'], color=row['color'], symbol=row['Stjerne'], opacity=0.7),
-                hoverlabel=dict(font=dict(size=30), bgcolor="white")
+                hoverlabel=dict(font=dict(size=20), bgcolor="white")
             ), axis=1).tolist()
         
             # Add all traces in bulk
