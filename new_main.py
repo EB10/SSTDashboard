@@ -162,15 +162,6 @@ search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 
     'Kategori_filter': 'Underordnet kategori'
 }).reset_index(drop=True)
 
-        search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
-
-        search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
-            'Vigtig': 'Betydningsniveau',
-            'Kategori': 'Overordnet kategori',
-            'Kategori_filter': 'Underordnet kategori'
-        }).reset_index(drop=True)
-
-
 
 
 
