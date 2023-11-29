@@ -194,7 +194,7 @@ def main():
             </div>
             """, unsafe_allow_html=True)
 
-    with st.expander("Data Side"):
+    with st.expander("Datavisninger over begivenheder og smitteudvikling"):
         st.markdown('<div class="title-font">Her kan du se og analysere data.</div>', unsafe_allow_html=True)
         
         def update_plot(selected_date):
