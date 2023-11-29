@@ -6,8 +6,9 @@ html, body, [class*="css"]   {
     font-size: 25px;
     font-weight: 500;
     color: #091747;
+    div[data-testid="stExpander"] div[role="button"] p {
+    font-size: 4rem;
+
+
 }
 
-div[data-testid="stExpander"] div[role="button"] p {
-    font-size: 4rem;
-}
