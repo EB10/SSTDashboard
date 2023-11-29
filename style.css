@@ -21,10 +21,7 @@ p {
     font-size: 8px; /* Example size, adjust as needed */
     /* Add any other styles you want for these buttons */
 }
-h1 {
-    font-family: 'Raleway', sans-serif; /* Replace with the font you want */
-    font-size: 50x; /* Example size, adjust as needed */
-    font-weight: 700; /* Bold font weight, adjust as needed */
-    color: #091747; /* Example color, adjust as needed */
-    /* Add any other styling properties you need */
+#tidslinje-over-sundhedsstyrelsens-h-ndtering-af-covid-19 {
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
 }
