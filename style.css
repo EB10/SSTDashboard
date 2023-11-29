@@ -13,3 +13,9 @@ div[data-testid="stExpander"] div[role="button"] p {
 p {
     font-size: 1rem; /* Smaller font size for other paragraphs */
 }
+
+.sidebar .stButton > button {
+    font-family: 'Raleway', sans-serif; /* Replace with your desired font */
+    font-size: 16px; /* Example size, adjust as needed */
+    /* Add any other styles you want for these buttons */
+}
