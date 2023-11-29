@@ -310,12 +310,11 @@ def main():
         
         
             return fig_combined
-        
-        legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
-        for value, color in color_mapping_df.items():
-            legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
-            legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
-        st.sidebar.markdown(legend_html, unsafe_allow_html=True)
+            legend_text = '<div style="font-size:22px;line-height:1;">Vigtighedsniveauer:'
+            for value, color in color_mapping_df.items():
+                legend_text += f"{value} = " + f'<span style="color:{color};font-size:50px;">●</span>'
+            legend_text += 'Milepæl = <span style="font-size:40px;">★</span>'
+            st.sidebar.markdown(legend_html, unsafe_allow_html=True)
             
         combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
         st.plotly_chart(combined_figure)
