@@ -162,7 +162,13 @@ search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 
     'Kategori_filter': 'Underordnet kategori'
 }).reset_index(drop=True)
 
+        search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
 
+        search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
+            'Vigtig': 'Betydningsniveau',
+            'Kategori': 'Overordnet kategori',
+            'Kategori_filter': 'Underordnet kategori'
+        }).reset_index(drop=True)
 
 
 
@@ -325,23 +331,8 @@ def main():
         
     with st.expander("Søg efter begivenheder"):
         search_term = st.text_input("Angiv et søgeord for en begivenhed")
-        search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
 
-        search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
-            'Vigtig': 'Betydningsniveau',
-            'Kategori': 'Overordnet kategori',
-            'Kategori_filter': 'Underordnet kategori'
-        }).reset_index(drop=True)
-
-        search_df['Dato'] = search_df['Dato'].dt.date
-        
-        # # Step 3: Reset the index
-        # search_df.reset_index(drop=True, inplace=True)
-        
-        # Convert the DataFrame to HTML, hide the index and border
-        
-        
-        # Filter the DataFrame based on the search term
+       
         if search_term:
             search_term_df = search_df[search_df['Beskrivelse'].str.contains(search_term, na=False, case=False)]
             if not search_term_df.empty:
