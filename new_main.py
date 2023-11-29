@@ -310,6 +310,8 @@ def main():
         
         
             return fig_combined
+        with st.expander("Søg efter begivenheder"):
+            
             
         legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
         for value, color in color_mapping_df.items():
