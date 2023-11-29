@@ -17,6 +17,7 @@ def load_excel(file_path):
     return pd.read_excel(file_path)
 
 st.set_page_config(layout="wide")
+st.sidebar.title("Filtrering af data")
 
 def local_css(file_name):
     with open(file_name) as f:
@@ -141,7 +142,6 @@ color_mapping = {
     'Antal positive PCR-test': 'rgba(200, 0, 100, 0.6)'
 
 }
-st.sidebar.title("Filtrering af data")
 
 color_mapping_df = {
     1: '#003F36',
