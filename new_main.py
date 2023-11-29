@@ -58,7 +58,7 @@ max_date = df['Dato'].max()
 def main():
     
     with st.expander("Introduktion til brug af tidslinjen", expanded = True):
-        st.write('
+        st.write("
             Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data 
             over tid og efter begivenheder og data på udviklingen.\n\n Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.  \n\n
             **Sådan bruger du appen:**\n
@@ -72,7 +72,7 @@ def main():
             Som standard vises kun begivenheder i kategori 1.  \n\n
             Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. 
             Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.
-            ')
+            ")
 
     with st.expander("Data Side"):
         st.write("Her kan du se og analysere data.")
