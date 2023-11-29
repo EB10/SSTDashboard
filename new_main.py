@@ -172,36 +172,9 @@ search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 
     'Kategori_filter': 'Underordnet kategori'
 }).reset_index(drop=True)
 
-search_df['Dato'] = search_df['Dato'].dt.date
-
-# # Step 3: Reset the index
-# search_df.reset_index(drop=True, inplace=True)
-
-# Convert the DataFrame to HTML, hide the index and border
 
 
-# Filter the DataFrame based on the search term
-if search_term:
-    search_term_df = search_df[search_df['Beskrivelse'].str.contains(search_term, na=False, case=False)]
-    if not search_term_df.empty:
-        st.write("Søgeresultater:")
-        st.dataframe(search_term_df)
-    else:
-        st.info("Ingen resultater fundet for din søgning.")
-else:
-    st.info("Indtast venligst et søgeord i menuen til venstre for at se resultater.")
 
-# Optional: Add some styling to the DataFrame display
-st.markdown("""
-<style>
-.dataframe {
-    border: 1px solid #1e1e1e;
-    border-radius: 5px;
-    overflow: hidden;
-    font-size: 0.85em;
-}
-</style>
-""", unsafe_allow_html=True)
 
 
 def update_plot(selected_date):
@@ -253,14 +226,6 @@ def create_test_graph(data):
     return fig2
 
 
-
-
-div_element_titel = """
-<div>Tidslinje over Corona</div>
-"""
-
-# Create the Streamlit app
-st.markdown('<style>.div_element_title {font-size: 200px;}</style>', unsafe_allow_html=True)
 
 
 container1 = st.container()
@@ -374,8 +339,6 @@ def main():
 
     with st.expander("Data Side"):
         st.markdown('<div class="title-font">Her kan du se og analysere data.</div>', unsafe_allow_html=True)
-        with col2:
-            # Plot code here
             combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
             st.plotly_chart(combined_figure, use_container_width=True)
 
