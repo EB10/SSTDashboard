@@ -57,6 +57,8 @@ max_date = df['Dato'].max()
 
 import streamlit as st
 
+import streamlit as st
+
 def main():
     st.markdown("""
         <style>
@@ -70,31 +72,32 @@ def main():
         </style>
         """, unsafe_allow_html=True)
 
+    with st.expander("Introduktion", expanded=True):
+        st.markdown("""
+            <div class="big-font">
+                Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data over tid og efter begivenheder og data på udviklingen.<br><br>
+                Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.<br><br>
+                <b>Sådan bruger du appen:</b><br>
+                - <b>Zoom på datoer:</b> Du kan zoome ind på specifikke datoer på to måder:<br>
+                  - <b>Ved hjælp af datofilteret:</b> Vælg den ønskede datointerval i datofilteret for at zoome ind på et bestemt tidsrum.<br>
+                  - <b>Ved at markere et område på grafen:</b> Træk for at markere det tidsrum, du ønsker at fokusere på, direkte på grafen.<br>
+                <b>Nulstil visningen:</b> For at nulstille visningen og se alle data igen, kan du klikke på 'Genstart visningen'.<br><br>
+                <b>Filtrer efter emner:</b><br>
+                Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. 
+                Tidslinjen viser begivenheder sorteret efter betydningsgrad, fra kategori 1 (mest betydningsfuld) til kategori 4 (mindst betydningsfuld). 
+                Som standard vises kun begivenheder i kategori 1.<br><br>
+                Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. 
+                Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.
+            </div>
+            """, unsafe_allow_html=True)
 
-    with st.expander(""):
-        st.markdown('<div class="title-font">Introduktion</div>', unsafe_allow_html=True)
-            st.markdown('<div class="big-font">Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data \
-            "over tid og efter begivenheder og data på udviklingen.\n\n Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.  \n\n"\
-            "**Sådan bruger du appen:**\n"\
-            "- **Zoom på datoer:** Du kan zoome ind på specifikke datoer på to måder:\n"\
-            "  - **Ved hjælp af datofilteret:** Vælg den ønskede datointerval i datofilteret for at zoome ind på et bestemt tidsrum.\n"\
-            "  - **Ved at markere et område på grafen:** Træk for at markere det tidsrum, du ønsker at fokusere på, direkte på grafen.\n"\
-            "**Nulstil visningen:** For at nulstille visningen og se alle data igen, kan du klikke på Genstart visningen.\n\n"\
-            "**Filtrer efter emner:**\n"\
-            "Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. "\
-            "Tidslinjen viser begivenheder sorteret efter betydningsgrad, fra kategori 1 (mest betydningsfuld) til kategori 4 (mindst betydningsfuld). "\
-            "Som standard vises kun begivenheder i kategori 1.\n\n"\
-            "Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. "\
-            "Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.</div>', unsafe_allow_html=True)
-
-    with st.expander(""):
-        st.markdown('<div class="title-font">Data Side</div>', unsafe_allow_html=True)
+    with st.expander("Data Side"):
+        st.markdown('<div class="title-font">Her kan du se og analysere data.</div>', unsafe_allow_html=True)
         # Resten af din datasidetekst
 
-    with st.expander(""):
-        st.markdown('<div class="title-font">Søgeside</div>', unsafe_allow_html=True)
+    with st.expander("Søgeside"):
+        st.markdown('<div class="title-font">Brug denne side til at søge efter specifikke oplysninger.</div>', unsafe_allow_html=True)
         # Resten af din søgesidetekst
 
 if __name__ == "__main__":
     main()
-
