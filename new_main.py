@@ -17,6 +17,11 @@ def load_excel(file_path):
     return pd.read_excel(file_path)
 
 st.set_page_config(layout="wide")
+with def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+local_css("style.css")
 
 image = Image.open(r"SSTLogo.png")
 
