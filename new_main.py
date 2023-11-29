@@ -331,8 +331,8 @@ def main():
                 st.dataframe(search_term_df)
             else:
                 st.info("Ingen resultater fundet for din søgning.")
-        else:
-            st.info("Indtast venligst et søgeord i menuen til venstre for at se resultater.")
+            else:
+                st.info("Indtast et søgeord i menuen til venstre for at se resultater.")
         
         # Optional: Add some styling to the DataFrame display
         st.markdown("""
