@@ -174,7 +174,7 @@ def main():
     st.markdown("""
         <style>
         .big-font {
-            font-size:30px !important;
+            font-size:20px !important;
         }
         .title-font {
             font-size:20px !important;
