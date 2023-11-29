@@ -199,137 +199,137 @@ def main():
     with st.expander("Data Side"):
         st.markdown('<div class="title-font">Her kan du se og analysere data.</div>', unsafe_allow_html=True)
         
-def update_plot(selected_date):
-    fig = go.Figure()
-
-    # Create a list of trace dictionaries
-    trace_dicts = df.apply(lambda row: dict(
-        type='scatter',
-        x=[row['Dato']],
-        y=[row['Kategori']],
-        mode="lines+markers",
-        name=f"Event {row.name+1}",
-        text=f"{row['Dato'].date()}<br>{row['Beskrivelse']}",
-        hoverinfo="text",
-        line=dict(width=6),
-        marker=dict(size=row['størrelse'], color=row['color'], symbol=row['Stjerne'], opacity=0.7),
-        hoverlabel=dict(font=dict(size=30), bgcolor="white")
-    ), axis=1).tolist()
-
-    # Add all traces in bulk
-    for trace_dict in trace_dicts:
-        fig.add_trace(go.Scatter(trace_dict))
-
-    return fig
-
-
-def create_test_graph(data):
-    fig2 = make_subplots(specs=[[{"secondary_y": True}]])
-
-    # Add all traces at once using a list comprehension
-    traces = [
-        go.Scatter(
-            x=data['Dato'],
-            y=data[GrafiskDataPunkt],
-            mode='lines',
-            fill='tozeroy',
-            fillcolor=color_mapping[GrafiskDataPunkt].replace("0.6", "0.2"),
-            line=dict(color=color_mapping[GrafiskDataPunkt]),
-            hoverinfo='x+y',
-            hoverlabel=dict(font=dict(size=40), bgcolor="white"),
-            name=GrafiskDataPunkt
-        )
-        for GrafiskDataPunkt in selected_data
-    ]
-
-    # Add the list of traces to the figure
-    fig2.add_traces(traces, rows=[1] * len(traces), cols=[1] * len(traces), secondary_ys=[False] * len(traces))
-
-    return fig2
-
-
-
-
-container1 = st.container()
-
-hide_default_format = """
-       <style>
-       #MainMenu {visibility: hidden; }
-       footer {visibility: hidden;}
-       </style>
-       """
-st.markdown(hide_default_format, unsafe_allow_html=True)
-
-
-def combined_plot_with_layout(data, selected_date, selected_data):
-    with st.spinner('Opdaterer data - vent venligst...'):
-        success_message_placeholder = st.empty()
-        # Create individual figures
-        fig = update_plot(selected_date)
-        fig2 = create_test_graph(data)
-
-        # Create a combined figure with shared x-axes
-        fig_combined = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.1)
-
-        # Add traces from fig to the combined figure without showing their legend
-        for trace in fig.data:
-            trace.showlegend = False
-            fig_combined.add_trace(trace, row=1, col=1)
-
-        # Add traces from fig2 to the combined figure
-        for trace in fig2.data:
-            fig_combined.add_trace(trace, row=2, col=1)
-
-        # Define common layout settings
-        common_layout = dict(
-            height=1260,
-            width=1800,
-            margin=dict(l=0, r=0),
-            font=dict(family="Arial, sans-serif", size=28, color="black"),
-            legend=dict(x=0.5, y=-0.1, xanchor='center', yanchor='top', orientation='h', font=dict(size=35))
-        )
-
-        # Update the layout based on the layouts of fig and fig2, and apply common settings
-        fig_combined.update_layout(
-            title=f"Begivenhedsoverblik og udvikling i daglig statistik",
-            title_font=dict(size=35, family="Arial, sans-serif"),
-            separators="*.,*",
-            xaxis2=dict(tickfont=dict(size=28, color="black"), tickformat="%d-%m-%y", showgrid=True, gridcolor='Black'),
-            xaxis=dict(tickfont=dict(size=28, color="black"), tickformat="%d-%m-%y", showgrid=True, gridcolor='Black',
-                       showticklabels=True),
-            yaxis=dict(tickfont=dict(size=28, color="black"), tickformat=" ,"),
-            yaxis2=dict(tickformat=" ,", title="Antal", gridcolor="black", titlefont=dict(size=28, color="black"),
-                        tickfont=dict(size=28, color="black")),
-            **common_layout
-        )
-        # Display the success message
-        success_message_placeholder.success('Data blev opdateret og vises om 5-10 sekunder')
-
-        # Sleep for a few seconds to display the message
-        time.sleep(3)  # Adjust the number of seconds as needed
-
-        # Clear the success message
-        success_message_placeholder.empty()
-
-
-    return fig_combined
-col1, col2 = st.columns([1, 10])  # Adjust the ratio as needed
-
-legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
-for value, color in color_mapping_df.items():
-    legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
-legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
-
-
-with col1:
-    # Use the HTML block for the legend
-    st.markdown(legend_html, unsafe_allow_html=True)
-    combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-    st.plotly_chart(combined_figure, use_container_width=True)
-
-    with st.expander("Søgeside"):
-        st.markdown('<div class="title-font">Brug denne side til at søge efter specifikke oplysninger.</div>', unsafe_allow_html=True)
-        # Resten af din søgesidetekst
+        def update_plot(selected_date):
+            fig = go.Figure()
+        
+            # Create a list of trace dictionaries
+            trace_dicts = df.apply(lambda row: dict(
+                type='scatter',
+                x=[row['Dato']],
+                y=[row['Kategori']],
+                mode="lines+markers",
+                name=f"Event {row.name+1}",
+                text=f"{row['Dato'].date()}<br>{row['Beskrivelse']}",
+                hoverinfo="text",
+                line=dict(width=6),
+                marker=dict(size=row['størrelse'], color=row['color'], symbol=row['Stjerne'], opacity=0.7),
+                hoverlabel=dict(font=dict(size=30), bgcolor="white")
+            ), axis=1).tolist()
+        
+            # Add all traces in bulk
+            for trace_dict in trace_dicts:
+                fig.add_trace(go.Scatter(trace_dict))
+        
+            return fig
+        
+        
+        def create_test_graph(data):
+            fig2 = make_subplots(specs=[[{"secondary_y": True}]])
+        
+            # Add all traces at once using a list comprehension
+            traces = [
+                go.Scatter(
+                    x=data['Dato'],
+                    y=data[GrafiskDataPunkt],
+                    mode='lines',
+                    fill='tozeroy',
+                    fillcolor=color_mapping[GrafiskDataPunkt].replace("0.6", "0.2"),
+                    line=dict(color=color_mapping[GrafiskDataPunkt]),
+                    hoverinfo='x+y',
+                    hoverlabel=dict(font=dict(size=40), bgcolor="white"),
+                    name=GrafiskDataPunkt
+                )
+                for GrafiskDataPunkt in selected_data
+            ]
+        
+            # Add the list of traces to the figure
+            fig2.add_traces(traces, rows=[1] * len(traces), cols=[1] * len(traces), secondary_ys=[False] * len(traces))
+        
+            return fig2
+        
+        
+        
+        
+        container1 = st.container()
+        
+        hide_default_format = """
+               <style>
+               #MainMenu {visibility: hidden; }
+               footer {visibility: hidden;}
+               </style>
+               """
+        st.markdown(hide_default_format, unsafe_allow_html=True)
+        
+        
+        def combined_plot_with_layout(data, selected_date, selected_data):
+            with st.spinner('Opdaterer data - vent venligst...'):
+                success_message_placeholder = st.empty()
+                # Create individual figures
+                fig = update_plot(selected_date)
+                fig2 = create_test_graph(data)
+        
+                # Create a combined figure with shared x-axes
+                fig_combined = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.1)
+        
+                # Add traces from fig to the combined figure without showing their legend
+                for trace in fig.data:
+                    trace.showlegend = False
+                    fig_combined.add_trace(trace, row=1, col=1)
+        
+                # Add traces from fig2 to the combined figure
+                for trace in fig2.data:
+                    fig_combined.add_trace(trace, row=2, col=1)
+        
+                # Define common layout settings
+                common_layout = dict(
+                    height=1260,
+                    width=1800,
+                    margin=dict(l=0, r=0),
+                    font=dict(family="Arial, sans-serif", size=28, color="black"),
+                    legend=dict(x=0.5, y=-0.1, xanchor='center', yanchor='top', orientation='h', font=dict(size=35))
+                )
+        
+                # Update the layout based on the layouts of fig and fig2, and apply common settings
+                fig_combined.update_layout(
+                    title=f"Begivenhedsoverblik og udvikling i daglig statistik",
+                    title_font=dict(size=35, family="Arial, sans-serif"),
+                    separators="*.,*",
+                    xaxis2=dict(tickfont=dict(size=28, color="black"), tickformat="%d-%m-%y", showgrid=True, gridcolor='Black'),
+                    xaxis=dict(tickfont=dict(size=28, color="black"), tickformat="%d-%m-%y", showgrid=True, gridcolor='Black',
+                               showticklabels=True),
+                    yaxis=dict(tickfont=dict(size=28, color="black"), tickformat=" ,"),
+                    yaxis2=dict(tickformat=" ,", title="Antal", gridcolor="black", titlefont=dict(size=28, color="black"),
+                                tickfont=dict(size=28, color="black")),
+                    **common_layout
+                )
+                # Display the success message
+                success_message_placeholder.success('Data blev opdateret og vises om 5-10 sekunder')
+        
+                # Sleep for a few seconds to display the message
+                time.sleep(3)  # Adjust the number of seconds as needed
+        
+                # Clear the success message
+                success_message_placeholder.empty()
+        
+        
+            return fig_combined
+        col1, col2 = st.columns([1, 10])  # Adjust the ratio as needed
+        
+        legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
+        for value, color in color_mapping_df.items():
+            legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
+        legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
+        
+        
+        with col1:
+            # Use the HTML block for the legend
+            st.markdown(legend_html, unsafe_allow_html=True)
+            combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
+            st.plotly_chart(combined_figure, use_container_width=True)
+        
+            with st.expander("Søgeside"):
+                st.markdown('<div class="title-font">Brug denne side til at søge efter specifikke oplysninger.</div>', unsafe_allow_html=True)
+                # Resten af din søgesidetekst
 
 if __name__ == "__main__":
     main()
