@@ -171,17 +171,7 @@ search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 
 
 
 def main():
-    st.markdown("""
-        <style>
-        .big-font {
-            font-size:20px !important;
-        }
-        .title-font {
-            font-size:20px !important;
-            font-weight:bold;
-        }
-        </style>
-        """, unsafe_allow_html=True)
+
     st.markdown("""
         <style>
             .css-1xhj18k {font-size: 24px !important; min-height: 60px !important;}
