@@ -176,6 +176,13 @@ def main():
         }
         </style>
         """, unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+            .css-1xhj18k {font-size: 24px !important; min-height: 60px !important;}
+            .css-1xhj18k > label {font-size: 24px !important;}
+        </style>
+        """, unsafe_allow_html=True)
+    
 
     with st.expander("Introduktion", expanded=True):
         st.markdown("""
