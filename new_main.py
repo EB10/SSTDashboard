@@ -76,7 +76,7 @@ def main():
             "- **Zoom på datoer:** Du kan zoome ind på specifikke datoer på to måder:\n"\
             "  - **Ved hjælp af datofilteret:** Vælg den ønskede datointerval i datofilteret for at zoome ind på et bestemt tidsrum.\n"\
             "  - **Ved at markere et område på grafen:** Træk for at markere det tidsrum, du ønsker at fokusere på, direkte på grafen.\n"\
-            "**Nulstil visningen:** For at nulstille visningen og se alle data igen, kan du klikke på 'Genstart visningen' herunder.\n\n"\
+            "**Nulstil visningen:** For at nulstille visningen og se alle data igen, kan du klikke på Genstart visningen.\n\n"\
             "**Filtrer efter emner:**\n"\
             "Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. "\
             "Tidslinjen viser begivenheder sorteret efter betydningsgrad, fra kategori 1 (mest betydningsfuld) til kategori 4 (mindst betydningsfuld). "\
