@@ -311,7 +311,46 @@ def main():
         
             return fig_combined
         with st.expander("Søg efter begivenheder"):
-            
+            search_term = st.text_input()
+            search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
+
+        search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
+            'Vigtig': 'Betydningsniveau',
+            'Kategori': 'Overordnet kategori',
+            'Kategori_filter': 'Underordnet kategori'
+        }).reset_index(drop=True)
+
+        search_df['Dato'] = search_df['Dato'].dt.date
+        
+        # # Step 3: Reset the index
+        # search_df.reset_index(drop=True, inplace=True)
+        
+        # Convert the DataFrame to HTML, hide the index and border
+        
+        
+        # Filter the DataFrame based on the search term
+        if search_term:
+            search_term_df = search_df[search_df['Beskrivelse'].str.contains(search_term, na=False, case=False)]
+            if not search_term_df.empty:
+                st.write("Søgeresultater:")
+                st.dataframe(search_term_df)
+            else:
+                st.info("Ingen resultater fundet for din søgning.")
+        else:
+            st.info("Indtast venligst et søgeord i menuen til venstre for at se resultater.")
+        
+        # Optional: Add some styling to the DataFrame display
+        st.markdown("""
+        <style>
+        .dataframe {
+            border: 1px solid #1e1e1e;
+            border-radius: 5px;
+            overflow: hidden;
+            font-size: 0.85em;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+
             
         legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
         for value, color in color_mapping_df.items():
