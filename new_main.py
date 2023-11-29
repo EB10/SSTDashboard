@@ -64,13 +64,16 @@ def main():
             font-size:30px !important;
         }
         .title-font {
-            font-size:24px !important;
+            font-size:20px !important;
             font-weight:bold;
         }
         </style>
         """, unsafe_allow_html=True)
 
-    st.markdown('<div class="big-font">Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data "\
+
+    with st.expander(""):
+        st.markdown('<div class="title-font">Introduktion</div>', unsafe_allow_html=True)
+            st.markdown('<div class="big-font">Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data \
             "over tid og efter begivenheder og data på udviklingen.\n\n Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.  \n\n"\
             "**Sådan bruger du appen:**\n"\
             "- **Zoom på datoer:** Du kan zoome ind på specifikke datoer på to måder:\n"\
@@ -83,10 +86,6 @@ def main():
             "Som standard vises kun begivenheder i kategori 1.\n\n"\
             "Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. "\
             "Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.</div>', unsafe_allow_html=True)
-
-    with st.expander(""):
-        st.markdown('<div class="title-font">Introduktion</div>', unsafe_allow_html=True)
-        # Resten af din introduktionstekst
 
     with st.expander(""):
         st.markdown('<div class="title-font">Data Side</div>', unsafe_allow_html=True)
