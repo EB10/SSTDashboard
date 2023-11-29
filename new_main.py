@@ -310,6 +310,19 @@ def main():
         
         
             return fig_combined
+
+                
+        legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
+        for value, color in color_mapping_df.items():
+            legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
+        
+        legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
+        
+        st.sidebar.markdown(legend_html, unsafe_allow_html=True)
+            
+        combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
+        st.plotly_chart(combined_figure)
+        
     with st.expander("Søg efter begivenheder"):
         search_term = st.text_input("Angiv et søgeord for en begivenhed")
         search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
@@ -351,18 +364,7 @@ def main():
         </style>
         """, unsafe_allow_html=True)
 
-            
-        legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
-        for value, color in color_mapping_df.items():
-            legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
-        
-        legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
-        
-        st.sidebar.markdown(legend_html, unsafe_allow_html=True)
-            
-        combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-        st.plotly_chart(combined_figure)
-        
+
            
 
 if __name__ == "__main__":
