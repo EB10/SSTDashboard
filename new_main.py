@@ -311,7 +311,7 @@ def main():
         
             return fig_combined
     with st.expander("Søg efter begivenheder"):
-        search_term = st.text_input()
+        search_term = st.text_input("Angiv et søgeord for en begivenhed")
         search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
 
         search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
