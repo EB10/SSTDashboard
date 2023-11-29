@@ -185,7 +185,7 @@ def main():
     st.markdown("""
         <style>
             .css-1xhj18k {font-size: 24px !important; min-height: 60px !important;}
-            .css-1xhj18k > label {font-size: 24px !important;}
+            .css-1xhj18k > label {font-size: 200px !important;}
         </style>
         """, unsafe_allow_html=True)
     
