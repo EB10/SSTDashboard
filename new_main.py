@@ -250,7 +250,6 @@ def main():
         
         
         
-        container1 = st.container()
         
         hide_default_format = """
                <style>
@@ -318,13 +317,9 @@ def main():
         for value, color in color_mapping_df.items():
             legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
         legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
-        
-        
-        with col1:
-            # Use the HTML block for the legend
-            st.markdown(legend_html, unsafe_allow_html=True)
-            combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-            st.plotly_chart(combined_figure, use_container_width=True)
+        st.markdown(legend_html, unsafe_allow_html=True)
+        combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
+        st.plotly_chart(combined_figure)
         
             with st.expander("Søgeside"):
                 st.markdown('<div class="title-font">Brug denne side til at søge efter specifikke oplysninger.</div>', unsafe_allow_html=True)
