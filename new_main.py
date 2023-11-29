@@ -321,9 +321,7 @@ def main():
         combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
         st.plotly_chart(combined_figure)
         
-            with st.expander("Søgeside"):
-                st.markdown('<div class="title-font">Brug denne side til at søge efter specifikke oplysninger.</div>', unsafe_allow_html=True)
-                # Resten af din søgesidetekst
+           
 
 if __name__ == "__main__":
     main()
