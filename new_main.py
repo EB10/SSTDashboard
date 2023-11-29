@@ -14,7 +14,7 @@ def main():
         vis_søgeside()
 
 def vis_introduktion():
-    st.title("Velkommen til vores Streamlit App")
+    st.title("Tidslinje over Sundhedsstyrelsens håndtering af covid-19")
     st.markdown("""
     'Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data '
     'over tid og efter begivenheder og data på udviklingen.\n\n Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.  \n\n'
