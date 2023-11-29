@@ -8,3 +8,6 @@ html, body, [class*="css"]   {
     color: #091747;
 }
 
+div[data-testid="stExpander"] div[role="button"] p {
+    font-size: 4rem;
+}
