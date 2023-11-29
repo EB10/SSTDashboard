@@ -11,11 +11,7 @@ import locale
 import base64
 from io import BytesIO
 
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-local_css("style.css")
 @st.cache_data
 def load_excel(file_path):
     return pd.read_excel(file_path)
