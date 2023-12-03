@@ -196,8 +196,8 @@ def main():
         </div>
         """, unsafe_allow_html=True)
 
-    with st.expander("Datavisninger over begivenheder og smitteudvikling"):
-        st.markdown('<div class="title-font">Her kan du se og analysere data.</div>', unsafe_allow_html=True)
+    with st.expander("Tidslinje over begivenheder og smitteudvikling"):
+        st.markdown('<div class="title-font">Her kan du se og navigere rundt i data - benyt menuen til venstre for at filtrere.</div>', unsafe_allow_html=True)
         
         def update_plot(selected_date):
             fig = go.Figure()
