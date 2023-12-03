@@ -174,22 +174,27 @@ def main():
 
     with st.expander("Introduktion", expanded=True):
         st.markdown("""
-            <div class="big-font">
-                Velkommen til Sundhedsstyrelsens overblik over covid-19 i Danmark. Denne side giver dig mulighed for at undersøge data over tid og efter begivenheder og data på udviklingen.<br><br>
-                Visningen bygger på meget data. Det kan derfor tage mellem 15-30 sekunder at indlæse, når du filtrerer. Du kan se indlæsningsstatus i højre øverste hjørne på siden.<br><br>
-                <b>Sådan bruger du appen:</b><br>
-                - <b>Zoom på datoer:</b> Du kan zoome ind på specifikke datoer på to måder:<br>
-                  - <b>Ved hjælp af datofilteret:</b> Vælg den ønskede datointerval i datofilteret for at zoome ind på et bestemt tidsrum.<br>
-                  - <b>Ved at markere et område på grafen:</b> Træk for at markere det tidsrum, du ønsker at fokusere på, direkte på grafen.<br>
-                <b>Nulstil visningen:</b> For at nulstille visningen og se alle data igen, kan du klikke på 'Genstart visningen'.<br><br>
-                <b>Filtrer efter emner:</b><br>
-                Vælg specifikke emner, såsom restriktioner eller vaccinationsindsats, for at fokusere visningen af begivenheder. 
-                Tidslinjen viser begivenheder sorteret efter betydningsgrad, fra kategori 1 (mest betydningsfuld) til kategori 4 (mindst betydningsfuld). 
-                Som standard vises kun begivenheder i kategori 1.<br><br>
-                Tidslinjen præsenterer både vigtige begivenheder og kvantitative daglige data, som antal indlagte og smittede. 
-                Dette giver dig en detaljeret oversigt over udviklingen i den valgte periode.
-            </div>
-            """, unsafe_allow_html=True)
+        <div class="big-font">
+            Denne side giver dig mulighed for at genbesøge begivenheder relateret til myndighedshåndteringen af pandemien og dykke ned i historisk statistik på den epidemiologisk udvikling og vaccinationsindsatsen.<br><br>
+            Visningen bygger på store mængder data. Det kan derfor tage mellem 15-30 sekunder for siden at indlæse, når du filtrerer og ændrer visningen af tidslinjen.<br><br>
+            Når siden indlæser og opdaterer, fremgår et ikon for indlæsningsstatus i højre øverste hjørne på siden.<br><br>
+            <b>Sådan bruger du tidslinjen:</b><br>
+            Den interaktive tidslinje kan findes under fanen Tidslinje over begivenheder og smitteudvikling. Du kan frit tilpasse indholdet af tidslinjen ved brug af følgende funktioner:<br>
+            <b>1. Filtrer efter emner og betydning:</b> Alle begivenheder og udgivelser er inddelt efter emne og betydning.<br>
+            Fokuser søgningen på et eller flere specifikke begivenhedsemner ved at vælge en eller flere kategorier i feltet Vælg begivenhedskategori til venstre for tidslinjen.<br>
+            Du kan også fokusere din søgning efter begivenheders betydning gennem valg i feltet Vælg betydningsgrad til venstre for tidslinjen. Her indikerer 1 de mest betydningsfulde begivenheder og 4 de mindst betydningsfulde begivenheder.<br><br>
+            <b>2. Zoom på datoer:</b> Du kan zoome ind på specifikke datoer ved at ændre på datointervallet til en særlig tidsperiode ved brug af felterne Startdato og Slutdato til venstre for tidslinjen.<br>
+            Det er også muligt at zoome ind på et specifikt område af tidslinjen ved at markere det område, du ønsker at fokusere på direkte grafen.<br>
+            Du zoomer ud igen ved at dobbeltklikke et vilkårligt sted på tidslinjen.<br><br>
+            <b>3. Nulstil visningen:</b> For at nulstille visningen og dermed dine valg af filtre for at se alle data igen, kan du klikke på Genstart visningen øverst til venstre på siden.<br><br>
+            <b>4. Statistik på dagsniveau:</b> Under tidslinjen fremgår en graf, der viser udvalgte statistikker på dagsniveau i samme periode som i tidslinjen. I feltet Vælg statistik på dagsniveau til venstre for tidslinjen har du mulighed for at vælge, hvilke statistikker du ønsker inkluderet i grafen.<br><br>
+            <b>5. Søg efter specifikke begivenheder og udgivelser:</b> Ønsker du et mere detaljeret indblik i specifikke begivenheder eller udgivelser, kan du anvende søgefeltet i fanen Søg efter begivenheder og udgivelser.<br>
+            Det er muligt at søge efter specifikke ord eller begivenheder i søgefeltet. Resultatet er en tabel med alle relevante begivenheder og udgivelser.<br>
+            Nogle begivenheder har tilhørende links, som kan kopieres for at læse mere om den specifikke begivenhed. Udgivelser kan findes ved at søge efter titlen på Sundhedsstyrelsens hjemmeside www.sst.dk.<br>
+            Vær opmærksom på at eventuelle valg af filtre til venstre på siden også påvirker resultaterne i søgetabellen.<br><br>
+            Vi håber, at du går på opdagelse i vores tidslinje!
+        </div>
+        """, unsafe_allow_html=True)
 
     with st.expander("Datavisninger over begivenheder og smitteudvikling"):
         st.markdown('<div class="title-font">Her kan du se og analysere data.</div>', unsafe_allow_html=True)
