@@ -188,15 +188,15 @@ def main():
             Når siden indlæser og opdaterer, fremgår et ikon for indlæsningsstatus i højre øverste hjørne på siden.<br>
             <h4>Sådan bruger du tidslinjen</h4>
             Den interaktive tidslinje kan findes under fanen <b>Tidslinje over begivenheder og smitteudvikling</b> herunder. Du kan klikke på fanen for at folde datavisningerne ud. Du kan frit tilpasse indholdet af tidslinjen ved brug af følgende funktioner, som du finder i menuen til venstre:<br><br>
-            <h4>1. Filtrer efter emner og betydning</h4>Alle begivenheder og udgivelser er inddelt efter emne og betydning.<br>
+            <h6>1. Filtrer efter emner og betydning</h6>Alle begivenheder og udgivelser er inddelt efter emne og betydning.<br>
             Fokuser søgningen på et eller flere specifikke begivenhedsemner ved at vælge en eller flere kategorier i feltet <b>Vælg begivenhedskategori i menuen til venstre for tidslinjen.</b><br>
             Du kan også fokusere din søgning efter begivenheders betydning gennem valg i feltet <b>Vælg betydningsgrad</b> i menuen til venstre for tidslinjen. Her indikerer 1 de mest betydningsfulde begivenheder og 4 de mindst betydningsfulde begivenheder.<br><br>
-            <h4>2. Zoom på datoer</h4> Du kan zoome ind på specifikke datoer ved at ændre på datointervallet til en særlig tidsperiode ved brug af felterne <b>Startdato</b> og <b>Slutdato</b> i menuen til venstre for tidslinjen.<br>
+            <h6>2. Zoom på datoer</h6> Du kan zoome ind på specifikke datoer ved at ændre på datointervallet til en særlig tidsperiode ved brug af felterne <b>Startdato</b> og <b>Slutdato</b> i menuen til venstre for tidslinjen.<br>
             Det er også muligt at zoome ind på et specifikt område af tidslinjen ved at markere det område, du ønsker at fokusere på direkte grafen.<br>
             Du zoomer ud igen ved at dobbeltklikke et vilkårligt sted på tidslinjen.<br><br>
-            <h4>3. Nulstil visningen</h4>For at nulstille visningen og dermed dine valg af filtre for at se alle data igen, kan du klikke på <b>Genstart visningen</b> øverst til venstre på siden.<br><br>
-            <h4>4. Statistik på dagsniveau</h4>Under tidslinjen fremgår en graf, der viser udvalgte statistikker på dagsniveau i samme periode som i tidslinjen. I feltet <b>Vælg statistik på dagsniveau</b> i menuen til venstre for tidslinjen har du mulighed for at vælge, hvilke statistikker du ønsker inkluderet i grafen.<br><br>
-            <h4>5. Søg efter specifikke begivenheder og udgivelser</h4>Ønsker du et mere detaljeret indblik i specifikke begivenheder eller udgivelser, kan du anvende søgefeltet i fanen <b>Søg efter begivenheder og udgivelser.</b><br>
+            <h6>3. Nulstil visningen</h6>For at nulstille visningen og dermed dine valg af filtre for at se alle data igen, kan du klikke på <b>Genstart visningen</b> øverst til venstre på siden.<br><br>
+            <h6>4. Statistik på dagsniveau</h6>Under tidslinjen fremgår en graf, der viser udvalgte statistikker på dagsniveau i samme periode som i tidslinjen. I feltet <b>Vælg statistik på dagsniveau</b> i menuen til venstre for tidslinjen har du mulighed for at vælge, hvilke statistikker du ønsker inkluderet i grafen.<br><br>
+            <h6>5. Søg efter specifikke begivenheder og udgivelser</h6>Ønsker du et mere detaljeret indblik i specifikke begivenheder eller udgivelser, kan du anvende søgefeltet i fanen <b>Søg efter begivenheder og udgivelser.</b><br>
             Det er muligt at søge efter specifikke ord eller begivenheder i søgefeltet. Resultatet er en tabel med alle relevante begivenheder og udgivelser.<br>
             Nogle begivenheder har tilhørende links, som kan kopieres for at læse mere om den specifikke begivenhed. Udgivelser kan findes ved at søge efter titlen på Sundhedsstyrelsens hjemmeside www.sst.dk.<br>
             Vær opmærksom på at eventuelle valg af filtre til venstre på siden også påvirker resultaterne i søgetabellen.<br><br>
