@@ -186,7 +186,7 @@ def main():
             Denne side giver dig mulighed for at genbesøge begivenheder relateret til myndighedshåndteringen af pandemien og dykke ned i historisk statistik på den epidemiologisk udvikling og vaccinationsindsatsen.<br>
             Visningen bygger på store mængder data. Det kan derfor tage mellem 15-30 sekunder for siden at indlæse, når du filtrerer og ændrer visningen af tidslinjen.<br>
             Når siden indlæser og opdaterer, fremgår et ikon for indlæsningsstatus i højre øverste hjørne på siden.<br>
-            <b>Sådan bruger du tidslinjen:</b><br>
+            <h1>Sådan bruger du tidslinjen:</h1><br>
             Den interaktive tidslinje kan findes under fanen <b>Tidslinje over begivenheder og smitteudvikling</b> herunder. Du kan klikke på fanen for at folde datavisningerne ud. Du kan frit tilpasse indholdet af tidslinjen ved brug af følgende funktioner, som du finder i menuen til venstre:<br><br>
             <b>1. Filtrer efter emner og betydning:</b> Alle begivenheder og udgivelser er inddelt efter emne og betydning.<br>
             Fokuser søgningen på et eller flere specifikke begivenhedsemner ved at vælge en eller flere kategorier i feltet <b>Vælg begivenhedskategori i menuen til venstre for tidslinjen.</b><br>
