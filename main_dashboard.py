@@ -318,9 +318,9 @@ def main():
 
 
         for value, color in color_mapping_df.items():
-            legend_html += f"<span style='color:{color}; font-size: 52px; margin-top: 5px; margin-bottom: 5px; margin-right: 0px;'>●</span> <span style='font-size: 25px;'>{value}</span><br>"
+            legend_html += f"<span style='color:{color}; font-size: 52px; margin-top: 2px; margin-bottom: 2px;'>●</span> <span style='font-size: 25px;'>{value}</span><br>"
 
-        legend_html += "<span style='font-size: 52px;'>★</span> <span style='font-size: 25px;margin-top: 5px; margin-bottom: 5px; '>Milepæl</span></div>"
+        legend_html += "<span style='font-size: 52px;'>★</span> <span style='font-size: 25px;margin-top: 2px; margin-bottom: 2px; '>Milepæl</span></div>"
 
         st.sidebar.markdown(legend_html, unsafe_allow_html=True)
             
