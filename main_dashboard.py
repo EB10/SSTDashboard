@@ -180,7 +180,7 @@ def main():
             Visningen bygger på store mængder data. Det kan derfor tage mellem 15-30 sekunder for siden at indlæse, når du filtrerer og ændrer visningen af tidslinjen.<br><br>
             Når siden indlæser og opdaterer, fremgår et ikon for indlæsningsstatus i højre øverste hjørne på siden.<br><br>
             <b>Sådan bruger du tidslinjen:</b><br>
-            Den interaktive tidslinje kan findes under fanen Tidslinje over begivenheder og smitteudvikling. Du kan frit tilpasse indholdet af tidslinjen ved brug af følgende funktioner:<br><br>
+            Den interaktive tidslinje kan findes under fanen <b>Tidslinje over begivenheder og smitteudvikling</b> herunder. Du kan klikke på fanen for at folde datavisningerne ud. Du kan frit tilpasse indholdet af tidslinjen ved brug af følgende funktioner, som du finder i menuen til venstre:<br><br>
             <b>1. Filtrer efter emner og betydning:</b> Alle begivenheder og udgivelser er inddelt efter emne og betydning.<br>
             Fokuser søgningen på et eller flere specifikke begivenhedsemner ved at vælge en eller flere kategorier i feltet <b>Vælg begivenhedskategori i menuen til venstre for tidslinjen.</b><br>
             Du kan også fokusere din søgning efter begivenheders betydning gennem valg i feltet <b>Vælg betydningsgrad</b> i menuen til venstre for tidslinjen. Her indikerer 1 de mest betydningsfulde begivenheder og 4 de mindst betydningsfulde begivenheder.<br><br>
