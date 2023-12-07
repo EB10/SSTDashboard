@@ -316,7 +316,7 @@ def main():
                 
         legend_html = "<div style='margin-bottom: 2rem;'><h4>Betydningsniveauer</h4>"
         for value, color in color_mapping_df.items():
-            legend_html += f"<span style='color:{color}; font-size: 32px; margin-right: 10px;'>●</span> {value}<br>"
+            legend_html += f"<span style='color:{color}; font-size: 42px; margin-right: 0px;'>●</span> {value}<br>"
         
         legend_html += "<span style='font-size: 32px;'>★</span> Milepæl</div>"
         
