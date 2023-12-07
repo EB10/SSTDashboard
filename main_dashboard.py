@@ -198,7 +198,8 @@ def main():
         """, unsafe_allow_html=True)
 
     with st.expander("Tidslinje over begivenheder og smitteudvikling"):
-        st.markdown("""<div style='font-size: 25px;'>Her kan du se og navigere rundt i data - benyt menuen til venstre for at filtrere. Du kan zoome ind på en periode i graferne enten ved at markere området i grafen eller ved at filtrere på datoer i menuen til venstre.</div>'""", unsafe_allow_html=True)
+        st.markdown("""<div style='font-size: 25px;'>Her kan du se og navigere rundt i data - benyt menuen til venstre for at filtrere. Du kan zoome ind på en periode i graferne enten ved at markere området i grafen eller ved at filtrere på datoer i menuen til venstre.<br>
+        Den øverste graf viser alle begivenheder i den valgte tidsperiode fordelt på bevienhedskategorier og med markører for betydningsniveau. Du kan se, hvilke farver de forskellige begivenhedsniveauer angiver i menuen til venstre. >★< angiver de to største milepæle i perioden. </div>'""", unsafe_allow_html=True)
         
         def update_plot(selected_date):
             fig = go.Figure()
