@@ -338,7 +338,8 @@ def main():
             search_term_df = search_df[search_df['Beskrivelse'].str.contains(search_term, na=False, case=False)]
             if not search_term_df.empty:
                 st.write("Søgeresultater:")
-                st.dataframe(search_term_df.style.hide_index())
+                search_term_df = search_term_df.style.hide_index()
+                st.dataframe(search_term_df)
             else:
                 st.info("Ingen resultater fundet for din søgning.")
         else:
