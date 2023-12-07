@@ -314,7 +314,7 @@ def main():
             return fig_combined
 
                 
-        legend_html = "<div style='margin-bottom: 1rem;'><h2>Betydningsniveauer</h2>"
+        legend_html = "<div style='margin-bottom: -1rem;'><h2>Betydningsniveauer</h2>"
         for value, color in color_mapping_df.items():
             legend_html += f"<span style='color:{color}; font-size: 72px; margin-right: 0px;'>●</span> {value}<br>"
         
