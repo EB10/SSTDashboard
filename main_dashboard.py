@@ -188,7 +188,7 @@ def main():
             Du zoomer ud igen ved at dobbeltklikke et vilkårligt sted på tidslinjen.<br><br>
             <b>3. Nulstil visningen:</b> For at nulstille visningen og dermed dine valg af filtre for at se alle data igen, kan du klikke på Genstart visningen øverst til venstre på siden.<br><br>
             <b>4. Statistik på dagsniveau:</b> Under tidslinjen fremgår en graf, der viser udvalgte statistikker på dagsniveau i samme periode som i tidslinjen. I feltet Vælg statistik på dagsniveau til venstre for tidslinjen har du mulighed for at vælge, hvilke statistikker du ønsker inkluderet i grafen.<br><br>
-            <b>5. Søg efter specifikke begivenheder og udgivelser:</b> Ønsker du et mere detaljeret indblik i specifikke begivenheder eller udgivelser, kan du anvende søgefeltet i fanen Søg efter begivenheder og udgivelser.<br>
+            <b>5. Søg efter specifikke begivenheder og udgivelser:</b> Ønsker du et mere detaljeret indblik i specifikke begivenheder eller udgivelser, kan du anvende søgefeltet i fanen <b>Søg efter begivenheder og udgivelser.</b><br>
             Det er muligt at søge efter specifikke ord eller begivenheder i søgefeltet. Resultatet er en tabel med alle relevante begivenheder og udgivelser.<br>
             Nogle begivenheder har tilhørende links, som kan kopieres for at læse mere om den specifikke begivenhed. Udgivelser kan findes ved at søge efter titlen på Sundhedsstyrelsens hjemmeside www.sst.dk.<br>
             Vær opmærksom på at eventuelle valg af filtre til venstre på siden også påvirker resultaterne i søgetabellen.<br><br>
