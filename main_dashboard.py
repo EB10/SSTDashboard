@@ -17,6 +17,8 @@ def load_excel(file_path):
     return pd.read_excel(file_path)
 
 st.set_page_config(layout="wide")
+if st.sidebar.button('Genstart visningen'):
+    st.markdown('<meta http-equiv="refresh" content="0">', unsafe_allow_html=True)
 st.sidebar.title("Filtrering af data")
 
 def local_css(file_name):
@@ -181,13 +183,13 @@ def main():
             <b>Sådan bruger du tidslinjen:</b><br>
             Den interaktive tidslinje kan findes under fanen Tidslinje over begivenheder og smitteudvikling. Du kan frit tilpasse indholdet af tidslinjen ved brug af følgende funktioner:<br><br>
             <b>1. Filtrer efter emner og betydning:</b> Alle begivenheder og udgivelser er inddelt efter emne og betydning.<br>
-            Fokuser søgningen på et eller flere specifikke begivenhedsemner ved at vælge en eller flere kategorier i feltet Vælg begivenhedskategori til venstre for tidslinjen.<br>
-            Du kan også fokusere din søgning efter begivenheders betydning gennem valg i feltet Vælg betydningsgrad til venstre for tidslinjen. Her indikerer 1 de mest betydningsfulde begivenheder og 4 de mindst betydningsfulde begivenheder.<br><br>
-            <b>2. Zoom på datoer:</b> Du kan zoome ind på specifikke datoer ved at ændre på datointervallet til en særlig tidsperiode ved brug af felterne Startdato og Slutdato til venstre for tidslinjen.<br>
+            Fokuser søgningen på et eller flere specifikke begivenhedsemner ved at vælge en eller flere kategorier i feltet <b>Vælg begivenhedskategori i menuen til venstre for tidslinjen.</b><br>
+            Du kan også fokusere din søgning efter begivenheders betydning gennem valg i feltet <b>Vælg betydningsgrad</b> i menuen til venstre for tidslinjen. Her indikerer 1 de mest betydningsfulde begivenheder og 4 de mindst betydningsfulde begivenheder.<br><br>
+            <b>2. Zoom på datoer:</b> Du kan zoome ind på specifikke datoer ved at ændre på datointervallet til en særlig tidsperiode ved brug af felterne <b>Startdato</b> og <b>Slutdato</b> i menuen til venstre for tidslinjen.<br>
             Det er også muligt at zoome ind på et specifikt område af tidslinjen ved at markere det område, du ønsker at fokusere på direkte grafen.<br>
             Du zoomer ud igen ved at dobbeltklikke et vilkårligt sted på tidslinjen.<br><br>
-            <b>3. Nulstil visningen:</b> For at nulstille visningen og dermed dine valg af filtre for at se alle data igen, kan du klikke på Genstart visningen øverst til venstre på siden.<br><br>
-            <b>4. Statistik på dagsniveau:</b> Under tidslinjen fremgår en graf, der viser udvalgte statistikker på dagsniveau i samme periode som i tidslinjen. I feltet Vælg statistik på dagsniveau til venstre for tidslinjen har du mulighed for at vælge, hvilke statistikker du ønsker inkluderet i grafen.<br><br>
+            <b>3. Nulstil visningen:</b> For at nulstille visningen og dermed dine valg af filtre for at se alle data igen, kan du klikke på <b>Genstart visningen</b> øverst til venstre på siden.<br><br>
+            <b>4. Statistik på dagsniveau:</b> Under tidslinjen fremgår en graf, der viser udvalgte statistikker på dagsniveau i samme periode som i tidslinjen. I feltet <b>Vælg statistik på dagsniveau</b> i menuen til venstre for tidslinjen har du mulighed for at vælge, hvilke statistikker du ønsker inkluderet i grafen.<br><br>
             <b>5. Søg efter specifikke begivenheder og udgivelser:</b> Ønsker du et mere detaljeret indblik i specifikke begivenheder eller udgivelser, kan du anvende søgefeltet i fanen <b>Søg efter begivenheder og udgivelser.</b><br>
             Det er muligt at søge efter specifikke ord eller begivenheder i søgefeltet. Resultatet er en tabel med alle relevante begivenheder og udgivelser.<br>
             Nogle begivenheder har tilhørende links, som kan kopieres for at læse mere om den specifikke begivenhed. Udgivelser kan findes ved at søge efter titlen på Sundhedsstyrelsens hjemmeside www.sst.dk.<br>
@@ -327,7 +329,7 @@ def main():
         combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
         st.plotly_chart(combined_figure)
         
-    with st.expander("Søg efter begivenheder"):
+    with st.expander("Søg efter begivenheder og udgivelser"):
         search_term = st.text_input("Angiv et søgeord her")
 
        
