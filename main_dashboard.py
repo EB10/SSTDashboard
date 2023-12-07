@@ -335,10 +335,11 @@ def main():
 
        
         if search_term:
-            search_term_df = search_df[search_df['Beskrivelse'].str.contains(search_term, na=False, case=False)]
+            mask = search_df['Beskrivelse'].str.contains(search_term, na=False, case=False)
+            search_term_df = search_df[mask]
             if not search_term_df.empty:
                 st.write("Søgeresultater:")
-                search_term_df = search_term_df.style.hide_index()
+                search_term_df = search_term_df.reset_index(drop=True)
                 st.dataframe(search_term_df)
             else:
                 st.info("Ingen resultater fundet for din søgning.")
