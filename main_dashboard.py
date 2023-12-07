@@ -42,7 +42,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
+st.markdown("""
+    <style>
+    .dataframe-widget .stDataFrame { 
+        width: 100%; 
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 st.title('Tidslinje over Sundhedsstyrelsens håndtering af covid-19')
 st.markdown('<style>#tidslinje-over-sundhedsstyrelsens-h-ndtering-af-covid-19 {font-size: 50px; font-family: Raleway, sans-serif;}</style>', unsafe_allow_html=True)
