@@ -315,11 +315,12 @@ def main():
 
                 
         legend_html = "<div style='margin-bottom: -1rem;'><h2>Betydningsniveauer</h2>"
+
         for value, color in color_mapping_df.items():
-            legend_html += f"<span style='color:{color}; font-size: 72px; margin-right: 0px;'>●</span> {value}<br>"
-        
-        legend_html += "<span style='font-size: 52px;'>★</span> Milepæl</div>"
-        
+        legend_html += f"<span style='color:{color}; font-size: 72px; margin-right: 0px;'>●</span> <span style='font-size: 20px; line-height: 1.5;'>{value}</span><br>"
+
+        legend_html += "<span style='font-size: 52px;'>★</span> <span style='font-size: 20px; line-height: 1.5;'>Milepæl</span></div>"
+
         st.sidebar.markdown(legend_html, unsafe_allow_html=True)
             
         combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
