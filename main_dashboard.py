@@ -173,12 +173,13 @@ def main():
     
 
     with st.expander("Introduktion", expanded=True):
-        st.markdown("""  <style>
-    .big-font {
-        font-size: 20px;
-    }
-    </style>
-        <div class="big-font">
+        st.markdown("""
+            <style>
+            .big-font {
+            font-size: 20px;
+            }
+            </style>
+            <div class="big-font">
             Denne side giver dig mulighed for at genbesøge begivenheder relateret til myndighedshåndteringen af pandemien og dykke ned i historisk statistik på den epidemiologisk udvikling og vaccinationsindsatsen.<br><br>
             Visningen bygger på store mængder data. Det kan derfor tage mellem 15-30 sekunder for siden at indlæse, når du filtrerer og ændrer visningen af tidslinjen.<br><br>
             Når siden indlæser og opdaterer, fremgår et ikon for indlæsningsstatus i højre øverste hjørne på siden.<br><br>
