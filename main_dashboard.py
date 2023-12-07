@@ -74,8 +74,7 @@ size_mapping = {
 
 df['størrelse'] = df['Vigtig'].map(size_mapping)
 
-if st.sidebar.button('Genstart visningen'):
-    st.markdown('<meta http-equiv="refresh" content="0">', unsafe_allow_html=True)
+
 
 
 start_date = st.sidebar.date_input('Startdato', min_date)
