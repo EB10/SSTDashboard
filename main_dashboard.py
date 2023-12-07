@@ -314,13 +314,13 @@ def main():
             return fig_combined
 
                 
-        legend_html = "<div style='margin-bottom: -1rem;'><span style='font-size: 25px; font-weight: bold;'>Betydningsniveauer i tidslinjen</span>"
+        legend_html = "<div style='margin-bottom: -1rem;'><span style='font-size: 25px; font-weight: bold;'>Betydningsniveauer i tidslinjen</span><br>"
 
 
         for value, color in color_mapping_df.items():
-            legend_html += f"<span style='color:{color}; font-size: 52px; margin-right: 0px;'>●</span> <span style='font-size: 50px; line-height: 0.5;'>{value}</span><br>"
+            legend_html += f"<span style='color:{color}; font-size: 52px; margin-right: 0px;'>●</span> <span style='font-size: 25px; line-height: 0.5;'>{value}</span><br>"
 
-        legend_html += "<span style='font-size: 52px;'>★</span> <span style='font-size: 50px; line-height: 0.5;'>Milepæl</span></div>"
+        legend_html += "<span style='font-size: 52px;'>★</span> <span style='font-size: 25px; line-height: 0.5;'>Milepæl</span></div>"
 
         st.sidebar.markdown(legend_html, unsafe_allow_html=True)
             
