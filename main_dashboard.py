@@ -198,7 +198,7 @@ def main():
         """, unsafe_allow_html=True)
 
     with st.expander("Tidslinje over begivenheder og smitteudvikling"):
-        st.markdown('<div style='font-size: 25px;'>Her kan du se og navigere rundt i data - benyt menuen til venstre for at filtrere. Du kan zoome ind på en periode i graferne enten ved at markere området i grafen eller ved at filtrere på datoer i menuen til venstre.</div>', unsafe_allow_html=True)
+        st.markdown("""<div style='font-size: 25px;'>Her kan du se og navigere rundt i data - benyt menuen til venstre for at filtrere. Du kan zoome ind på en periode i graferne enten ved at markere området i grafen eller ved at filtrere på datoer i menuen til venstre.</div>'""", unsafe_allow_html=True)
         
         def update_plot(selected_date):
             fig = go.Figure()
@@ -329,7 +329,7 @@ def main():
         st.plotly_chart(combined_figure)
         
     with st.expander("Søg efter begivenheder og udgivelser"):
-        st.markdown('<div style='font-size: 25px;'>Her kan du søge på specifikke ord, som du er interesseret i at se mere information på. Søgeresultatet er det bagvedliggende data til begivenhedstidslinjen. Bemærk at filtrene i menuen i venstre også sorterer i resultatet i denne søgefunktion. </div>', unsafe_allow_html=True)
+        st.markdown("""<div style='font-size: 25px;'>Her kan du søge på specifikke ord, som du er interesseret i at se mere information på. Søgeresultatet er det bagvedliggende data til begivenhedstidslinjen. Bemærk at filtrene i menuen i venstre også sorterer i resultatet i denne søgefunktion. </div>'""", unsafe_allow_html=True)
         search_term = st.text_input("Angiv et søgeord her")
 
        
