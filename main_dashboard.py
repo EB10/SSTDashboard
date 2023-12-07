@@ -162,6 +162,7 @@ search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 
     'Kategori': 'Overordnet kategori',
     'Kategori_filter': 'Underordnet kategori'
 }).reset_index(drop=True)
+search_df['Dato'] = search_df['Dato'].dt.date
 
 
 
