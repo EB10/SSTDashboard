@@ -66,7 +66,7 @@ df_HaendelsesData.coumns = df.columns.str.strip()
 samlet_data = df
 df_HaendelsesData['Dato'] = pd.to_datetime(df_HaendelsesData['Dato'])
 
-df = df[df['Betydning '] != 0]
+df = df[df['Betydning'] != 0]
 min_date = df['Dato'].min()
 max_date = df['Dato'].max()
 
@@ -78,7 +78,7 @@ size_mapping = {
     4: 12
 }
 
-df['størrelse'] = df['Betydning '].map(size_mapping)
+df['størrelse'] = df['Betydning'].map(size_mapping)
 
 
 
@@ -103,7 +103,7 @@ df = df[(df["Dato"] >= pd.to_datetime(start)) & (df["Dato"] <= pd.to_datetime(sl
 df_HaendelsesData = df_HaendelsesData[(df_HaendelsesData["Dato"] >= pd.to_datetime(start)) & (df_HaendelsesData["Dato"] <= pd.to_datetime(slut))]
 
 
-df['CustomLabel'] = df['Betydning '].map(lambda x: x + 0.5)
+df['CustomLabel'] = df['Betydning'].map(lambda x: x + 0.5)
 unique_categories = df['Kategori'].unique()
 Labels = ["Alle begivenheder"] + [kategori for kategori in unique_categories if kategori != "Udgivelser"]
 
@@ -113,13 +113,13 @@ selected_y_value = st.sidebar.multiselect("Vælg begivenhedskategori", Labels, d
 BetydninghedLabels = []
 BetydninghedLabels.append("Alle begivenheder")
 
-BetydninghedLabels = list(df['Betydning '].unique())
+BetydninghedLabels = list(df['Betydning'].unique())
 
 valgte_Betydningheder = st.sidebar.multiselect("Vælg betydningsniveau", BetydninghedLabels, default=[1])
 valgte_Betydningheder = set(valgte_Betydningheder)
 
 # Filter df if valgte_Betydningheder is not empty, else use it as is
-df = df[df["Betydning "].isin(valgte_Betydningheder)] if valgte_Betydningheder else df
+df = df[df["Betydning"].isin(valgte_Betydningheder)] if valgte_Betydningheder else df
 
 
 if "Alle begivenheder" not in selected_y_value:
@@ -158,13 +158,13 @@ color_mapping_df = {
 }
 
 
-df['color'] = df['Betydning '].map(color_mapping_df)
+df['color'] = df['Betydning'].map(color_mapping_df)
 # Add a title and some text explaining what the app does
 
-search_df = df[['Dato', 'Beskrivelse', 'Betydning ', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
+search_df = df[['Dato', 'Beskrivelse', 'Betydning', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
 
-search_df = df[['Dato', 'Beskrivelse', 'Betydning ', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
-    'Betydning ': 'Betydningsniveau',
+search_df = df[['Dato', 'Beskrivelse', 'Betydning', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
+    'Betydning': 'Betydningsniveau',
     'Kategori': 'Overordnet kategori',
     'Kategori_filter': 'Underordnet kategori'
 }).reset_index(drop=True)
@@ -190,7 +190,7 @@ def main():
             Den interaktive tidslinje kan findes under fanen <b>Tidslinje over begivenheder og smitteudvikling</b> herunder. Du kan klikke på fanen for at folde datavisningerne ud. Du kan frit tilpasse indholdet af tidslinjen ved brug af følgende funktioner, som du finder i menuen til venstre:<br><br>
             <b>1. Filtrer efter emner og betydning</b>Alle begivenheder og udgivelser er inddelt efter emne og betydning.<br>
             Fokuser søgningen på et eller flere specifikke begivenhedsemner ved at vælge en eller flere kategorier i feltet <b>Vælg begivenhedskategori i menuen til venstre for tidslinjen.</b><br>
-            Du kan også fokusere din søgning efter begivenheders betydning gennem valg i feltet <b>Vælg betydningsgrad</b> i menuen til venstre for tidslinjen. Her indikerer 1 de mest betydningsfulde begivenheder og 4 de mindst betydningsfulde begivenheder.<br><br>
+            Du kan også fokusere din søgning efter begivenheders Betydninggennem valg i feltet <b>Vælg betydningsgrad</b> i menuen til venstre for tidslinjen. Her indikerer 1 de mest betydningsfulde begivenheder og 4 de mindst betydningsfulde begivenheder.<br><br>
             <b>2. Zoom på datoer</b> Du kan zoome ind på specifikke datoer ved at ændre på datointervallet til en særlig tidsperiode ved brug af felterne <b>Startdato</b> og <b>Slutdato</b> i menuen til venstre for tidslinjen.<br>
             Det er også muligt at zoome ind på et specifikt område af tidslinjen ved at markere det område, du ønsker at fokusere på direkte grafen.<br>
             Du zoomer ud igen ved at dobbeltklikke et vilkårligt sted på tidslinjen.<br><br>
