@@ -277,7 +277,7 @@ def main():
                 fig2 = create_test_graph(data)
         
                 # Create a combined figure with shared x-axes
-                fig_combined = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.2)
+                fig_combined = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.1)
         
                 # Add traces from fig to the combined figure without showing their legend
                 for trace in fig.data:
