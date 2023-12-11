@@ -277,7 +277,7 @@ def main():
                 fig2 = create_test_graph(data)
         
                 # Create a combined figure with shared x-axes
-                fig_combined = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.3)
+                fig_combined = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.2)
         
                 # Add traces from fig to the combined figure without showing their legend
                 for trace in fig.data:
@@ -311,6 +311,10 @@ def main():
                     **common_layout
                 )
                 fig_combined.update_layout(autosize=True)
+                col1, col2 = st.columns([1, 5])
+                
+                with col2:
+                    st.plotly_chart(fig_combined, use_container_width=True)
                 # Display the success message
                 success_message_placeholder.success('Data blev opdateret og vises om 5-10 sekunder')
         
