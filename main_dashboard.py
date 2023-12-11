@@ -338,7 +338,7 @@ def main():
         st.sidebar.markdown(legend_html, unsafe_allow_html=True)
             
         combined_figure = combined_plot_with_layout(df_HaendelsesData, selected_date, selected_data)
-        st.plotly_chart(combined_figure)
+        #st.plotly_chart(combined_figure)
         
     with st.expander("Søg efter begivenheder og udgivelser"):
         st.markdown("""<div style='font-size: 25px;'>Her kan du søge på specifikke ord, som du er interesseret i at se mere information på. Søgeresultatet er det bagvedliggende data til begivenhedstidslinjen. Bemærk at filtrene i menuen i venstre også sorterer i resultatet i denne søgefunktion. </div>'""", unsafe_allow_html=True)
