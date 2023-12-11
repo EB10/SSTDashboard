@@ -291,9 +291,9 @@ def main():
                 # Define common layout settings
                 common_layout = dict(
                     height=1260,
-                    width=1800,
+                    #width=1800,
                     margin=dict(l=0, r=0),
-                    font=dict(family="Arial, sans-serif", size=28, color="black"),
+                    font=dict(family="Raleway, sans-serif", size=28, color="black"),
                     legend=dict(x=0.5, y=-0.1, xanchor='center', yanchor='top', orientation='h', font=dict(size=35))
                 )
         
