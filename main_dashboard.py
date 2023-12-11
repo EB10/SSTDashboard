@@ -110,16 +110,16 @@ Labels = ["Alle begivenheder"] + [kategori for kategori in unique_categories if 
 
 selected_y_value = st.sidebar.multiselect("Vælg begivenhedskategori", Labels, default="Alle begivenheder")
 
-Betydning hedLabels = []
-Betydning hedLabels.append("Alle begivenheder")
+BetydninghedLabels = []
+BetydninghedLabels.append("Alle begivenheder")
 
-Betydning hedLabels = list(df['Betydning '].unique())
+BetydninghedLabels = list(df['Betydning '].unique())
 
-valgte_Betydning heder = st.sidebar.multiselect("Vælg betydningsniveau", Betydning hedLabels, default=[1])
-valgte_Betydning heder = set(valgte_Betydning heder)
+valgte_Betydningheder = st.sidebar.multiselect("Vælg betydningsniveau", BetydninghedLabels, default=[1])
+valgte_Betydningheder = set(valgte_Betydningheder)
 
-# Filter df if valgte_Betydning heder is not empty, else use it as is
-df = df[df["Betydning "].isin(valgte_Betydning heder)] if valgte_Betydning heder else df
+# Filter df if valgte_Betydningheder is not empty, else use it as is
+df = df[df["Betydning "].isin(valgte_Betydningheder)] if valgte_Betydningheder else df
 
 
 if "Alle begivenheder" not in selected_y_value:
