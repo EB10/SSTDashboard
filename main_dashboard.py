@@ -66,7 +66,7 @@ df_HaendelsesData.coumns = df.columns.str.strip()
 samlet_data = df
 df_HaendelsesData['Dato'] = pd.to_datetime(df_HaendelsesData['Dato'])
 
-df = df[df['Vigtig'] != 0]
+df = df[df['Betydning '] != 0]
 min_date = df['Dato'].min()
 max_date = df['Dato'].max()
 
@@ -78,7 +78,7 @@ size_mapping = {
     4: 12
 }
 
-df['størrelse'] = df['Vigtig'].map(size_mapping)
+df['størrelse'] = df['Betydning '].map(size_mapping)
 
 
 
@@ -103,23 +103,23 @@ df = df[(df["Dato"] >= pd.to_datetime(start)) & (df["Dato"] <= pd.to_datetime(sl
 df_HaendelsesData = df_HaendelsesData[(df_HaendelsesData["Dato"] >= pd.to_datetime(start)) & (df_HaendelsesData["Dato"] <= pd.to_datetime(slut))]
 
 
-df['CustomLabel'] = df['Vigtig'].map(lambda x: x + 0.5)
+df['CustomLabel'] = df['Betydning '].map(lambda x: x + 0.5)
 unique_categories = df['Kategori'].unique()
 Labels = ["Alle begivenheder"] + [kategori for kategori in unique_categories if kategori != "Udgivelser"]
 
 
 selected_y_value = st.sidebar.multiselect("Vælg begivenhedskategori", Labels, default="Alle begivenheder")
 
-VigtighedLabels = []
-VigtighedLabels.append("Alle begivenheder")
+Betydning hedLabels = []
+Betydning hedLabels.append("Alle begivenheder")
 
-VigtighedLabels = list(df['Vigtig'].unique())
+Betydning hedLabels = list(df['Betydning '].unique())
 
-valgte_vigtigheder = st.sidebar.multiselect("Vælg betydningsniveau", VigtighedLabels, default=[1])
-valgte_vigtigheder = set(valgte_vigtigheder)
+valgte_Betydning heder = st.sidebar.multiselect("Vælg betydningsniveau", Betydning hedLabels, default=[1])
+valgte_Betydning heder = set(valgte_Betydning heder)
 
-# Filter df if valgte_vigtigheder is not empty, else use it as is
-df = df[df["Vigtig"].isin(valgte_vigtigheder)] if valgte_vigtigheder else df
+# Filter df if valgte_Betydning heder is not empty, else use it as is
+df = df[df["Betydning "].isin(valgte_Betydning heder)] if valgte_Betydning heder else df
 
 
 if "Alle begivenheder" not in selected_y_value:
@@ -158,13 +158,13 @@ color_mapping_df = {
 }
 
 
-df['color'] = df['Vigtig'].map(color_mapping_df)
+df['color'] = df['Betydning '].map(color_mapping_df)
 # Add a title and some text explaining what the app does
 
-search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
+search_df = df[['Dato', 'Beskrivelse', 'Betydning ', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']]
 
-search_df = df[['Dato', 'Beskrivelse', 'Vigtig', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
-    'Vigtig': 'Betydningsniveau',
+search_df = df[['Dato', 'Beskrivelse', 'Betydning ', 'Kategori', 'Kategori_filter', 'Kilde', 'Link']].rename(columns={
+    'Betydning ': 'Betydningsniveau',
     'Kategori': 'Overordnet kategori',
     'Kategori_filter': 'Underordnet kategori'
 }).reset_index(drop=True)
