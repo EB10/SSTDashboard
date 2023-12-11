@@ -277,7 +277,7 @@ def main():
                 fig2 = create_test_graph(data)
         
                 # Create a combined figure with shared x-axes
-                fig_combined = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.1)
+                fig_combined = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.3)
         
                 # Add traces from fig to the combined figure without showing their legend
                 for trace in fig.data:
@@ -290,7 +290,7 @@ def main():
         
                 # Define common layout settings
                 common_layout = dict(
-                    #height=1260,
+                    height=1260,
                     #width=1800,
                     margin=dict(l=0, r=0),
                     font=dict(family="Raleway, sans-serif", size=22, color="black"),
@@ -300,7 +300,7 @@ def main():
                 # Update the layout based on the layouts of fig and fig2, and apply common settings
                 fig_combined.update_layout(
                     title=f"Begivenhedsoverblik og udvikling i daglig statistik",
-                    title_font=dict(size=35, family="Arial, sans-serif"),
+                    title_font=dict(size=35, family="Raleway, sans-serif"),
                     separators="*.,*",
                     xaxis2=dict(tickfont=dict(size=28, color="black"), tickformat="%d-%m-%y", showgrid=True, gridcolor='Black'),
                     xaxis=dict(tickfont=dict(size=28, color="black"), tickformat="%d-%m-%y", showgrid=True, gridcolor='Black',
