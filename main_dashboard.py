@@ -310,11 +310,10 @@ def main():
                                 tickfont=dict(size=28, color="black")),
                     **common_layout
                 )
-                fig_combined.update_layout(autosize=True)
-                col1, col2 = st.columns([1, 5])
-                
-                with col2:
-                    st.plotly_chart(fig_combined, use_container_width=True)
+                #fig_combined.update_layout(autosize=True)
+                st.plotly_chart(fig_combined, use_container_width=True)
+
+
                 # Display the success message
                 success_message_placeholder.success('Data blev opdateret og vises om 5-10 sekunder')
         
