@@ -350,9 +350,7 @@ def main():
             search_term_df = search_df[mask]
             if not search_term_df.empty:
                 st.write("Søgeresultater:")
-                col = st.columns(1)
-                with col[0]:
-                    st.dataframe(search_term_df, hide_index=True)
+                st.dataframe(search_term_df, hide_index=True, use_container_width=True)
             else:
                 st.info("Ingen resultater fundet for din søgning.")
         else:
