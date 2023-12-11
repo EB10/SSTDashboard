@@ -290,11 +290,11 @@ def main():
         
                 # Define common layout settings
                 common_layout = dict(
-                    height=1260,
+                    #height=1260,
                     #width=1800,
                     margin=dict(l=0, r=0),
-                    font=dict(family="Raleway, sans-serif", size=28, color="black"),
-                    legend=dict(x=0.5, y=-0.1, xanchor='center', yanchor='top', orientation='h', font=dict(size=35))
+                    font=dict(family="Raleway, sans-serif", size=22, color="black"),
+                    legend=dict(x=0.5, y=-0.1, xanchor='center', yanchor='top', orientation='h', font=dict(size=30))
                 )
         
                 # Update the layout based on the layouts of fig and fig2, and apply common settings
