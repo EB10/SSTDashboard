@@ -180,7 +180,7 @@ def main():
 
     
 
-    with st.expander("Introduktion", expanded=True):
+    with st.expander("Introduktion", expanded=False):
         st.markdown("""
             <div style='font-size: 20px;'>
             Denne side giver dig mulighed for at genbesøge begivenheder relateret til myndighedshåndteringen af pandemien og dykke ned i historisk statistik på den epidemiologisk udvikling og vaccinationsindsatsen.<br>
