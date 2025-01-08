@@ -1,4 +1,4 @@
-﻿altair==5.0.1
+altair==5.0.1
 altgraph==0.17.3
 asttokens==2.2.1
 async-generator==1.10
@@ -63,7 +63,7 @@ pandas==2.0.1
 parso==0.8.3
 pefile==2023.2.7
 pickleshare==0.7.5
-Pillow
+Pillow==9.5.0         # Tilføjet versionsnummer
 pipreqs==0.4.13
 platformdirs==3.9.1
 plotly==5.15.0
@@ -78,12 +78,11 @@ Pygments==2.15.1
 Pympler==1.0.1
 pyparsing==3.0.9
 pyrsistent==0.19.3
-PySimpleGUI==4.60.4
+PySimpleGUI==4.60.5.0 # Ændret fra 4.60.4
 PySocks==1.7.1
 python-dateutil==2.8.2
 pytz==2023.3
 pytz-deprecation-shim==0.1.0.post0
-
 pyzmq==25.1.0
 reportlab==4.0.4
 requests==2.31.0
